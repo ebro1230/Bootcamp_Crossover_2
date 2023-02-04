@@ -15,18 +15,31 @@ import useFetch from "./useFetch";
 function Home() {
   const navigation = useNavigate();
   const url =
-    "https://app-7a20b2f8-6eda-430c-9229-4662dc2a238b.cleverapps.io/restaurant";
+    "https://my.api.mockaroo.com/bootcamp_crossover_2.json?key=538900a0";
   const [restaurantType, setRestaurantType] = useState("");
-  const { restaurants, isLoading, error } = useFetch(url);
+  const [typesofFood, setTypesofFood] = useState([]);
+  let { restaurants, isLoading, error, types } = useFetch(url);
 
   const handleOnClick = (e) => {
     navigation(`/${e.target.id}`);
-    console.log("I was clicked");
-    console.log(e);
   };
   const handleChange = (e) => {
     setRestaurantType(e.target.value);
   };
+  const handleTypes = (restaurants) => {
+    restaurants.forEach((restaurant) => {
+      if (!types.includes(restaurant.tags1)) {
+        types = [...types, restaurant.tags1];
+      }
+    });
+    types.forEach((type) => {
+      console.log(type);
+    });
+  };
+  useEffect(() => {
+    handleTypes(restaurants);
+    setTypesofFood(types);
+  }, [restaurants]);
 
   return (
     <>
@@ -52,9 +65,11 @@ function Home() {
             label="Restaurant Type"
             onChange={handleChange}
           >
-            <MenuItem value="Greek">Greek</MenuItem>
-            <MenuItem value="Turkish">Turkish</MenuItem>
-            <MenuItem value="German">German</MenuItem>
+            {typesofFood.length
+              ? typesofFood.map((type) => {
+                  return <MenuItem value={type}>{type}</MenuItem>;
+                })
+              : null}
           </Select>
         </FormControl>
       </div>
@@ -64,10 +79,57 @@ function Home() {
         ) : restaurants.length ? (
           restaurantType ? (
             restaurants.map((restaurant) => {
-              if (restaurant.tags.include(restaurantType)) {
+              if (restaurant.tags1 === restaurantType) {
                 return (
+                  <div className="restaurantCard">
+                    <Card
+                      width="300"
+                      height="300"
+                      key={restaurant.name}
+                      id={restaurant.name}
+                    >
+                      <CardActionArea
+                        id={restaurant.name}
+                        onClick={handleOnClick}
+                      >
+                        <CardMedia
+                          component="img"
+                          className="card"
+                          image={restaurant.logo}
+                          alt="Image of the Restaurant"
+                          id={restaurant.name}
+                        />
+                        <CardContent id={restaurant.name}>
+                          <Typography
+                            id={restaurant.name}
+                            gutterBottom
+                            variant="h5"
+                            component="div"
+                          >
+                            {restaurant.name}
+                          </Typography>
+                          <Typography
+                            id={restaurant.name}
+                            variant="body2"
+                            color="text.secondary"
+                          >
+                            {restaurant.tags1} <br />
+                            restaurant.price
+                          </Typography>
+                        </CardContent>
+                      </CardActionArea>
+                    </Card>
+                  </div>
+                );
+              }
+            })
+          ) : (
+            restaurants.map((restaurant) => {
+              return (
+                <div className="restaurantCard">
                   <Card
-                    sx={{ maxWidth: 345 }}
+                    width="300"
+                    height="300"
                     key={restaurant.name}
                     id={restaurant.name}
                   >
@@ -77,8 +139,8 @@ function Home() {
                     >
                       <CardMedia
                         component="img"
-                        height="140"
-                        image={restaurant.restaurant_logo}
+                        className="card"
+                        image={restaurant.logo}
                         alt="Image of the Restaurant"
                         id={restaurant.name}
                       />
@@ -96,49 +158,13 @@ function Home() {
                           variant="body2"
                           color="text.secondary"
                         >
-                          restaurant.tags restaurant.price
+                          {restaurant.tags1} <br />
+                          restaurant.price
                         </Typography>
                       </CardContent>
                     </CardActionArea>
                   </Card>
-                );
-              }
-            })
-          ) : (
-            restaurants.map((restaurant) => {
-              return (
-                <Card
-                  sx={{ maxWidth: 345 }}
-                  key={restaurant.name}
-                  id={restaurant.name}
-                >
-                  <CardActionArea id={restaurant.name} onClick={handleOnClick}>
-                    <CardMedia
-                      component="img"
-                      height="140"
-                      image={restaurant.restaurant_logo}
-                      alt="Image of the Restaurant"
-                      id={restaurant.name}
-                    />
-                    <CardContent id={restaurant.name}>
-                      <Typography
-                        id={restaurant.name}
-                        gutterBottom
-                        variant="h5"
-                        component="div"
-                      >
-                        {restaurant.name}
-                      </Typography>
-                      <Typography
-                        id={restaurant.name}
-                        variant="body2"
-                        color="text.secondary"
-                      >
-                        restaurant.tags restaurant.price
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                </Card>
+                </div>
               );
             })
           )
@@ -146,6 +172,7 @@ function Home() {
           <h1>An Error Has Occurred: {error}</h1>
         )}
       </div>
+      <p>{types}</p>
     </>
   );
 }

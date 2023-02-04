@@ -4,8 +4,10 @@ export default function useFetch(url) {
   const [restaurants, setRestaurants] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [types, setTypes] = useState([]);
   useEffect(() => {
     setIsLoading(true);
+    setTypes([]);
     fetch(url)
       .then((response) => {
         if (!response.ok) {
@@ -25,5 +27,5 @@ export default function useFetch(url) {
         setIsLoading(false);
       });
   }, [url]);
-  return { restaurants, isLoading, error };
+  return { restaurants, isLoading, error, types };
 }
