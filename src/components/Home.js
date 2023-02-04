@@ -32,9 +32,6 @@ function Home() {
         types = [...types, restaurant.tags1];
       }
     });
-    types.forEach((type) => {
-      console.log(type);
-    });
   };
   useEffect(() => {
     handleTypes(restaurants);
@@ -172,19 +169,8 @@ function Home() {
           <h1>An Error Has Occurred: {error}</h1>
         )}
       </div>
-      <p>{types}</p>
     </>
   );
 }
 
 export default Home;
-
-/*Goes between the Select
-{restaurants.length
-            ? restaurants.map((restaurant) => {
-                restaurant.map((tag) => {
-                  <MenuItem value={tag}>{tag}</MenuItem>;
-                });
-              })
-            : null}
-*/
