@@ -7,7 +7,7 @@ import Sidebar from "./components/Sidebar";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Sidebar />}>
+      <Route path="/">
         <Route index element={<TabComponent />} />
       </Route>
     </Routes>
