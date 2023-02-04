@@ -2,11 +2,12 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import TabComponent from "./components/TabComponent";
+import Sidebar from "./components/Sidebar";
 
 function App() {
   return (
     <Routes>
-      <Route path="/">
+      <Route path="/" element={<Sidebar />}>
         <Route index element={<TabComponent />} />
       </Route>
     </Routes>
