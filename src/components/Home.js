@@ -84,7 +84,7 @@ function Home() {
       ) : restaurants.length ? (
         restaurantType === true ? (
           restaurants.map((restaurant) => {
-            restaurant.tags.include(restaurantType) ? (
+            if (restaurant.tags.include(restaurantType)) {
               <Card sx={{ maxWidth: 345 }}>
                 <CardActionArea onClick={handleOnClick}>
                   <CardMedia
@@ -102,8 +102,8 @@ function Home() {
                     </Typography>
                   </CardContent>
                 </CardActionArea>
-              </Card>
-            ) : null;
+              </Card>;
+            }
           })
         ) : (
           restaurants.map((restaurant) => {
