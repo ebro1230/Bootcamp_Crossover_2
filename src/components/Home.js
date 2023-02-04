@@ -62,6 +62,7 @@ function Home() {
             label="Restaurant Type"
             onChange={handleChange}
           >
+            <MenuItem value="">Any</MenuItem>
             {typesofFood.length
               ? typesofFood.map((type) => {
                   return <MenuItem value={type}>{type}</MenuItem>;
