@@ -10,35 +10,13 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import useFetch from "./useFetch";
 
 function Home() {
   const navigation = useNavigate();
-  const [restaurants, setRestaurants] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const url = "";
   const [restaurantType, setRestaurantType] = useState("");
-
-  useEffect(() => {
-    setIsLoading(true);
-    fetch("")
-      .then((response) => {
-        if (!response.ok) {
-          setError(`HTTP Status Error: ${response.status}`);
-        } else {
-          return response;
-        }
-      })
-      .then((response) => response.json())
-      .then((json) => {
-        setRestaurants(json);
-      })
-      .catch((error) => {
-        setError(`${error}`);
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
-  }, []);
+  const { restaurants, isLoading, error } = useFetch(url);
 
   const handleOnClick = (e) => {
     navigation(`/${e.restaurantName}`);
