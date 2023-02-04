@@ -8,7 +8,7 @@ import NavComponent from "./components/NavComponent";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<NavComponent />} />
+      <Route path="/" element={<Home />} />
     </Routes>
   );
 }

@@ -14,12 +14,13 @@ import useFetch from "./useFetch";
 
 function Home() {
   const navigation = useNavigate();
-  const url = "";
+  const url =
+    "https://app-7a20b2f8-6eda-430c-9229-4662dc2a238b.cleverapps.io/restaurant";
   const [restaurantType, setRestaurantType] = useState("");
   const { restaurants, isLoading, error } = useFetch(url);
 
   const handleOnClick = (e) => {
-    navigation(`/${e.restaurantName}`);
+    navigation(`/${e.name}`);
   };
   const handleChange = (e) => {
     setRestaurantType(e.target.value);
