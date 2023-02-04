@@ -6,7 +6,7 @@ function Sidebar() {
     <aside className="sidebarNav">
       <NavLink
         className="navlinks homepage"
-        to=""
+        to="/"
         style={({ isActive }) => ({ color: isActive ? "#00bcd4" : null })}
       >
         Homepage

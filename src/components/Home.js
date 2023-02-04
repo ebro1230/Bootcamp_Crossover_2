@@ -20,13 +20,13 @@ function Home() {
   const { restaurants, isLoading, error } = useFetch(url);
 
   const handleOnClick = (e) => {
-    console.log(e);
     navigation(`/${e.target.id}`);
+    console.log("I was clicked");
+    console.log(e);
   };
   const handleChange = (e) => {
     setRestaurantType(e.target.value);
   };
-  console.log(restaurants);
 
   return (
     <>
@@ -41,48 +41,107 @@ function Home() {
           <h1>Best Restaurants in Cologne</h1>
         </div>
       </div>
-      <FormControl sx={{ m: 1, minWidth: 800 }}>
-        <InputLabel id="Type of Restaurant">Restaurant Type</InputLabel>
-        <Select
-          labelId="Type of Restaurant"
-          id="Restaurant Type"
-          value={restaurantType}
-          autoWidth
-          label="Restaurant Type"
-          onChange={handleChange}
-        ></Select>
-      </FormControl>
+      <div className="filter">
+        <FormControl sx={{ m: 1, minWidth: 800 }}>
+          <InputLabel id="Type of Restaurant">Restaurant Type</InputLabel>
+          <Select
+            labelId="Type of Restaurant"
+            id="Restaurant Type"
+            value={restaurantType}
+            autoWidth
+            label="Restaurant Type"
+            onChange={handleChange}
+          >
+            <MenuItem value="Greek">Greek</MenuItem>
+            <MenuItem value="Turkish">Turkish</MenuItem>
+            <MenuItem value="German">German</MenuItem>
+          </Select>
+        </FormControl>
+      </div>
       <div className="restaurants">
         {isLoading ? (
           <LoadingIndicator />
         ) : restaurants.length ? (
-          restaurants.map((restaurant) => {
-            return (
-              <Card
-                sx={{ maxWidth: 345 }}
-                key={restaurant.name}
-                id={restaurant.name}
-              >
-                <CardActionArea id={restaurant.name} onClick={handleOnClick}>
-                  <CardMedia
-                    component="img"
-                    height="250"
-                    image={restaurant.restaurant_logo}
-                    alt="Image of the Restaurant"
+          restaurantType ? (
+            restaurants.map((restaurant) => {
+              if (restaurant.tags.include(restaurantType)) {
+                return (
+                  <Card
+                    sx={{ maxWidth: 345 }}
+                    key={restaurant.name}
                     id={restaurant.name}
-                  />
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                      {restaurant.name}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      ''
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
-            );
-          })
+                  >
+                    <CardActionArea
+                      id={restaurant.name}
+                      onClick={handleOnClick}
+                    >
+                      <CardMedia
+                        component="img"
+                        height="140"
+                        image={restaurant.restaurant_logo}
+                        alt="Image of the Restaurant"
+                        id={restaurant.name}
+                      />
+                      <CardContent id={restaurant.name}>
+                        <Typography
+                          id={restaurant.name}
+                          gutterBottom
+                          variant="h5"
+                          component="div"
+                        >
+                          {restaurant.name}
+                        </Typography>
+                        <Typography
+                          id={restaurant.name}
+                          variant="body2"
+                          color="text.secondary"
+                        >
+                          restaurant.tags restaurant.price
+                        </Typography>
+                      </CardContent>
+                    </CardActionArea>
+                  </Card>
+                );
+              }
+            })
+          ) : (
+            restaurants.map((restaurant) => {
+              return (
+                <Card
+                  sx={{ maxWidth: 345 }}
+                  key={restaurant.name}
+                  id={restaurant.name}
+                >
+                  <CardActionArea id={restaurant.name} onClick={handleOnClick}>
+                    <CardMedia
+                      component="img"
+                      height="140"
+                      image={restaurant.restaurant_logo}
+                      alt="Image of the Restaurant"
+                      id={restaurant.name}
+                    />
+                    <CardContent id={restaurant.name}>
+                      <Typography
+                        id={restaurant.name}
+                        gutterBottom
+                        variant="h5"
+                        component="div"
+                      >
+                        {restaurant.name}
+                      </Typography>
+                      <Typography
+                        id={restaurant.name}
+                        variant="body2"
+                        color="text.secondary"
+                      >
+                        restaurant.tags restaurant.price
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                </Card>
+              );
+            })
+          )
         ) : (
           <h1>An Error Has Occurred: {error}</h1>
         )}
@@ -102,28 +161,3 @@ export default Home;
               })
             : null}
 */
-
-/*      restaurantType === true ? (
-          restaurants.map((restaurant) => {
-            if (restaurant.tags.include(restaurantType)) {
-              <Card sx={{ maxWidth: 345 }}>
-                <CardActionArea onClick={handleOnClick}>
-                  <CardMedia
-                    component="img"
-                    height="140"
-                    image={restaurant.restaurant_logo}
-                    alt="Image of the Restaurant"
-                  />
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                      {restaurant.name}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      {restaurant.tags}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>;
-            }
-          })
-        ) : (*/
