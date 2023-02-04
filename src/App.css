@@ -29,6 +29,9 @@
 .navlinks.homepage {
   font-size: large;
 }
+.navContainer {
+  display: flex;
+}
 .centered {
   position: absolute;
   top: 50%;
