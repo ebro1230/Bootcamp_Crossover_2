@@ -20,11 +20,17 @@ function Home() {
   const { restaurants, isLoading, error } = useFetch(url);
 
   const handleOnClick = (e) => {
+<<<<<<< HEAD
     navigation(`/${e.name}`);
+=======
+    console.log(e);
+    navigation(`/${e.target.id}`);
+>>>>>>> cd911b694b6c3e0d974010933f6e1680a671b947
   };
   const handleChange = (e) => {
     setRestaurantType(e.target.value);
   };
+  console.log(restaurants);
 
   return (
     <>
@@ -35,7 +41,7 @@ function Home() {
           width="100%"
           height="200"
         />
-        <div class="centered">
+        <div className="centered">
           <h1>Best Restaurants in Cologne</h1>
         </div>
       </div>
@@ -48,20 +54,60 @@ function Home() {
           autoWidth
           label="Restaurant Type"
           onChange={handleChange}
-        >
-          {restaurants.length
+        ></Select>
+      </FormControl>
+      <div className="restaurants">
+        {isLoading ? (
+          <LoadingIndicator />
+        ) : restaurants.length ? (
+          restaurants.map((restaurant) => {
+            return (
+              <Card
+                sx={{ maxWidth: 345 }}
+                key={restaurant.name}
+                id={restaurant.name}
+              >
+                <CardActionArea id={restaurant.name} onClick={handleOnClick}>
+                  <CardMedia
+                    component="img"
+                    height="250"
+                    image={restaurant.restaurant_logo}
+                    alt="Image of the Restaurant"
+                    id={restaurant.name}
+                  />
+                  <CardContent>
+                    <Typography gutterBottom variant="h5" component="div">
+                      {restaurant.name}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      ''
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            );
+          })
+        ) : (
+          <h1>An Error Has Occurred: {error}</h1>
+        )}
+      </div>
+    </>
+  );
+}
+
+export default Home;
+
+/*Goes between the Select
+{restaurants.length
             ? restaurants.map((restaurant) => {
                 restaurant.map((tag) => {
                   <MenuItem value={tag}>{tag}</MenuItem>;
                 });
               })
             : null}
-        </Select>
-      </FormControl>
-      {isLoading ? (
-        <LoadingIndicator />
-      ) : restaurants.length ? (
-        restaurantType === true ? (
+*/
+
+/*      restaurantType === true ? (
           restaurants.map((restaurant) => {
             if (restaurant.tags.include(restaurantType)) {
               <Card sx={{ maxWidth: 345 }}>
@@ -69,7 +115,7 @@ function Home() {
                   <CardMedia
                     component="img"
                     height="140"
-                    image={restaurant.image}
+                    image={restaurant.restaurant_logo}
                     alt="Image of the Restaurant"
                   />
                   <CardContent>
@@ -84,33 +130,4 @@ function Home() {
               </Card>;
             }
           })
-        ) : (
-          restaurants.map((restaurant) => {
-            <Card sx={{ maxWidth: 345 }}>
-              <CardActionArea onClick={handleOnClick}>
-                <CardMedia
-                  component="img"
-                  height="140"
-                  image={restaurant.image}
-                  alt="Image of the Restaurant"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    {restaurant.name}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {restaurant.tags}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>;
-          })
-        )
-      ) : (
-        <h1>An Error Has Occurred: {error}</h1>
-      )}
-    </>
-  );
-}
-
-export default Home;
+        ) : (*/

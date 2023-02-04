@@ -19,32 +19,29 @@ export default function LabTabs() {
   };
 
   return (
-    <>
-      <Sidebar />
-      <Box sx={{ width: "100%", typography: "body1" }}>
-        <TabContext value={value}>
-          <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-            <TabList onChange={handleChange} aria-label="lab API tabs example">
-              <Tab label="Details" value="Details" />
-              <Tab label="Location" value="Location" />
-              <Tab label="Menu" value="Menu" />
-              <Tab label="Pictures" value="Pictures" />
-            </TabList>
-          </Box>
-          <TabPanel value="Details">
-            <Details />
-          </TabPanel>
-          <TabPanel value="Location">
-            <Location />
-          </TabPanel>
-          <TabPanel value="Menu">
-            <Menu />
-          </TabPanel>
-          <TabPanel value="Pictures">
-            <Pictures />
-          </TabPanel>
-        </TabContext>
-      </Box>
-    </>
+    <Box sx={{ width: "100%", typography: "body1" }}>
+      <TabContext value={value}>
+        <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+          <TabList onChange={handleChange} aria-label="lab API tabs example">
+            <Tab label="Details" value="Details" />
+            <Tab label="Location" value="Location" />
+            <Tab label="Menu" value="Menu" />
+            <Tab label="Pictures" value="Pictures" />
+          </TabList>
+        </Box>
+        <TabPanel value="Details">
+          <Details />
+        </TabPanel>
+        <TabPanel value="Location">
+          <Location />
+        </TabPanel>
+        <TabPanel value="Menu">
+          <Menu />
+        </TabPanel>
+        <TabPanel value="Pictures">
+          <Pictures />
+        </TabPanel>
+      </TabContext>
+    </Box>
   );
 }
