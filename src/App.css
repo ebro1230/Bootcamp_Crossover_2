@@ -46,3 +46,7 @@
 h1 {
   font-size: 3rem;
 }
+.restaurants{
+  display:flex;
+  justify-content: space-around;
+}
