@@ -11,11 +11,12 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import useFetch from "./useFetch";
+import moneySignGold from "./Dollar_Sign_(Gold).jpg";
+import moneySignBlack from "./Dollar_Sign_(Black).jpg";
 
 function Home() {
   const navigation = useNavigate();
-  const url =
-    "https://my.api.mockaroo.com/bootcamp_crossover_2.json?key=538900a0";
+  const url = "./Bootcamp_Crossover_2.json";
   const [restaurantType, setRestaurantType] = useState("");
   const [typesofFood, setTypesofFood] = useState([]);
   let { restaurants, isLoading, error, types } = useFetch(url);
@@ -28,9 +29,11 @@ function Home() {
   };
   const handleTypes = (restaurants) => {
     restaurants.forEach((restaurant) => {
-      if (!types.includes(restaurant.tags1)) {
-        types = [...types, restaurant.tags1];
-      }
+      restaurant.tags.map((tag) => {
+        if (!types.includes(tag)) {
+          types = [...types, tag];
+        }
+      });
     });
   };
   useEffect(() => {
@@ -77,7 +80,7 @@ function Home() {
         ) : restaurants.length ? (
           restaurantType ? (
             restaurants.map((restaurant) => {
-              if (restaurant.tags1 === restaurantType) {
+              if (restaurant.tags.includes(restaurantType)) {
                 return (
                   <div className="restaurantCard">
                     <Card
@@ -111,8 +114,126 @@ function Home() {
                             variant="body2"
                             color="text.secondary"
                           >
-                            {restaurant.tags1} <br />
-                            restaurant.price
+                            {restaurant.tags.map((tag) => (
+                              <p>{tag} </p>
+                            ))}
+                            <br />
+                            {restaurant.price === 1 ? (
+                              <>
+                                <img
+                                  src={moneySignGold}
+                                  alt="Gold Money Sign"
+                                />
+                                <img
+                                  src={moneySignBlack}
+                                  alt="Black Money Sign"
+                                />
+                                <img
+                                  src={moneySignBlack}
+                                  alt="Black Money Sign"
+                                />
+                                <img
+                                  src={moneySignBlack}
+                                  alt="Black Money Sign"
+                                />
+                                <img
+                                  src={moneySignBlack}
+                                  alt="Black Money Sign"
+                                />
+                              </>
+                            ) : restaurant.price === 2 ? (
+                              <>
+                                <img
+                                  src={moneySignGold}
+                                  alt="Gold Money Sign"
+                                />
+                                <img
+                                  src={moneySignGold}
+                                  alt="Gold Money Sign"
+                                />
+                                <img
+                                  src={moneySignBlack}
+                                  alt="Black Money Sign"
+                                />
+                                <img
+                                  src={moneySignBlack}
+                                  alt="Black Money Sign"
+                                />
+                                <img
+                                  src={moneySignBlack}
+                                  alt="Black Money Sign"
+                                />
+                              </>
+                            ) : restaurant.price === 3 ? (
+                              <>
+                                <img
+                                  src={moneySignGold}
+                                  alt="Gold Money Sign"
+                                />
+                                <img
+                                  src={moneySignGold}
+                                  alt="Gold Money Sign"
+                                />
+                                <img
+                                  src={moneySignGold}
+                                  alt="Gold Money Sign"
+                                />
+                                <img
+                                  src={moneySignBlack}
+                                  alt="Black Money Sign"
+                                />
+                                <img
+                                  src={moneySignBlack}
+                                  alt="Black Money Sign"
+                                />
+                              </>
+                            ) : restaurant.price === 4 ? (
+                              <>
+                                <img
+                                  src={moneySignGold}
+                                  alt="Gold Money Sign"
+                                />
+                                <img
+                                  src={moneySignGold}
+                                  alt="Gold Money Sign"
+                                />
+                                <img
+                                  src={moneySignGold}
+                                  alt="Gold Money Sign"
+                                />
+                                <img
+                                  src={moneySignGold}
+                                  alt="Gold Money Sign"
+                                />
+                                <img
+                                  src={moneySignBlack}
+                                  alt="Black Money Sign"
+                                />
+                              </>
+                            ) : restaurant.price === 5 ? (
+                              <>
+                                <img
+                                  src={moneySignGold}
+                                  alt="Gold Money Sign"
+                                />
+                                <img
+                                  src={moneySignGold}
+                                  alt="Gold Money Sign"
+                                />
+                                <img
+                                  src={moneySignGold}
+                                  alt="Gold Money Sign"
+                                />
+                                <img
+                                  src={moneySignGold}
+                                  alt="Gold Money Sign"
+                                />
+                                <img
+                                  src={moneySignGold}
+                                  alt="Gold Money Sign"
+                                />
+                              </>
+                            ) : null}
                           </Typography>
                         </CardContent>
                       </CardActionArea>
@@ -156,8 +277,81 @@ function Home() {
                           variant="body2"
                           color="text.secondary"
                         >
-                          {restaurant.tags1} <br />
-                          restaurant.price
+                          {restaurant.tags.map((tag) => (
+                            <p>{tag} </p>
+                          ))}
+                          <br />
+                          {restaurant.price === 1 ? (
+                            <>
+                              <img src={moneySignGold} alt="Gold Money Sign" />
+                              <img
+                                src={moneySignBlack}
+                                alt="Black Money Sign"
+                              />
+                              <img
+                                src={moneySignBlack}
+                                alt="Black Money Sign"
+                              />
+                              <img
+                                src={moneySignBlack}
+                                alt="Black Money Sign"
+                              />
+                              <img
+                                src={moneySignBlack}
+                                alt="Black Money Sign"
+                              />
+                            </>
+                          ) : restaurant.price === 2 ? (
+                            <>
+                              <img src={moneySignGold} alt="Gold Money Sign" />
+                              <img src={moneySignGold} alt="Gold Money Sign" />
+                              <img
+                                src={moneySignBlack}
+                                alt="Black Money Sign"
+                              />
+                              <img
+                                src={moneySignBlack}
+                                alt="Black Money Sign"
+                              />
+                              <img
+                                src={moneySignBlack}
+                                alt="Black Money Sign"
+                              />
+                            </>
+                          ) : restaurant.price === 3 ? (
+                            <>
+                              <img src={moneySignGold} alt="Gold Money Sign" />
+                              <img src={moneySignGold} alt="Gold Money Sign" />
+                              <img src={moneySignGold} alt="Gold Money Sign" />
+                              <img
+                                src={moneySignBlack}
+                                alt="Black Money Sign"
+                              />
+                              <img
+                                src={moneySignBlack}
+                                alt="Black Money Sign"
+                              />
+                            </>
+                          ) : restaurant.price === 4 ? (
+                            <>
+                              <img src={moneySignGold} alt="Gold Money Sign" />
+                              <img src={moneySignGold} alt="Gold Money Sign" />
+                              <img src={moneySignGold} alt="Gold Money Sign" />
+                              <img src={moneySignGold} alt="Gold Money Sign" />
+                              <img
+                                src={moneySignBlack}
+                                alt="Black Money Sign"
+                              />
+                            </>
+                          ) : restaurant.price === 5 ? (
+                            <>
+                              <img src={moneySignGold} alt="Gold Money Sign" />
+                              <img src={moneySignGold} alt="Gold Money Sign" />
+                              <img src={moneySignGold} alt="Gold Money Sign" />
+                              <img src={moneySignGold} alt="Gold Money Sign" />
+                              <img src={moneySignGold} alt="Gold Money Sign" />
+                            </>
+                          ) : null}
                         </Typography>
                       </CardContent>
                     </CardActionArea>

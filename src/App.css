@@ -62,11 +62,18 @@ h1 {
   display:flex;
   justify-content: center;
 }
-image{
-  max-width: 100% !important;
-  max-height: auto !important;
+.MuiCardMedia-root{
+  width:300px !important;
+  height: 300px !important;
 }
 .card{
+  width: 100% !important;
+  object-fit: contain !important;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+}
+
+.MuiCard-root{
   width: 300px !important;
-  height: 300px !important;
+  height: auto !important;
 }
