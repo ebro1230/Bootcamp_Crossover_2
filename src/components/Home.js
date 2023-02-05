@@ -20,7 +20,7 @@ function Home() {
   const [restaurantType, setRestaurantType] = useState("");
   const [typesofFood, setTypesofFood] = useState([]);
   let { restaurants, isLoading, error, types } = useFetch(url);
-
+  console.log(restaurants);
   const handleOnClick = (e) => {
     navigation(`/${e.target.id}`);
   };

@@ -14,7 +14,7 @@ export default function LabTabs(props) {
   const [value, setValue] = React.useState("Details");
   const [position, setPosition] = useState(null);
   const address = `${props.restaurant.street}+${props.restaurant.zip}+${props.restaurant.city}+${props.restaurant.state}+${props.restaurant.country}`;
-  const restaurants = props.restaurants;
+  // const restaurants = props.restaurants;
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -59,7 +59,7 @@ export default function LabTabs(props) {
           ) : null}
         </TabPanel>
         <TabPanel value="Menu">
-          <Menu />
+          <Menu restaurant={props.restaurant} />
         </TabPanel>
         <TabPanel value="Pictures">
           <Pictures restaurant={props.restaurant} />

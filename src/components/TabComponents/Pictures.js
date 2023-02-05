@@ -1,3 +1,16 @@
 export default function Pictures({ restaurant }) {
-  return <h3>Picture Component</h3>;
+  return (
+    <div className="img-tab-container">
+      <img src={restaurant.logo}></img>
+      <img src={restaurant.logo}></img>
+      <img src={restaurant.logo}></img>
+      <img src={restaurant.logo}></img>
+      <img src={restaurant.logo}></img>
+      <img src={restaurant.logo}></img>
+      <img src={restaurant.logo}></img>
+      <img src={restaurant.logo}></img>
+      <img src={restaurant.logo}></img>
+      <img src={restaurant.logo}></img>
+    </div>
+  );
 }

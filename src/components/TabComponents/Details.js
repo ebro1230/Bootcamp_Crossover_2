@@ -1,9 +1,9 @@
 export default function Details({ restaurant }) {
   return (
-    <div>
+    <div className="details-tab-container">
       <h2>{restaurant.name}</h2>
       <br />
-      <img className="restaurant-img" src={restaurant.logo}></img>
+      <img className="details-restaurant-img" src={restaurant.logo}></img>
       <h4>Restaurant address:</h4>
       <p>{restaurant.country}</p>
       <p>{restaurant.state}</p>
