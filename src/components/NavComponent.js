@@ -5,10 +5,11 @@ import useFetch from "./useFetch";
 import TabComponent from "./TabComponent";
 
 export default function NavComponent() {
-  const { restaurants, isLoading, error } = useFetch();
+  const url = "./Bootcamp_Crossover_2.json";
+  const { restaurants, isLoading, error, types } = useFetch(url);
   return (
     <div className="navContainer">
-      <Sidebar />
+      <Sidebar restaurants={restaurants} />
       <TabComponent />
     </div>
   );
