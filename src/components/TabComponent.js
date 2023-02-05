@@ -9,14 +9,12 @@ import Details from "./TabComponents/Details";
 import Location from "./TabComponents/Location";
 import Menu from "./TabComponents/Menu";
 import Pictures from "./TabComponents/Pictures";
-
-export default function LabTabs() {
+export default function LabTabs({ restaurants, urlendpoint }) {
   const [value, setValue] = React.useState("Details");
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
   return (
     <Box sx={{ width: "100%", typography: "body1" }}>
       <TabContext value={value}>
@@ -29,7 +27,7 @@ export default function LabTabs() {
           </TabList>
         </Box>
         <TabPanel value="Details">
-          <Details />
+          <Details urlendpoint={urlendpoint} restaurants={restaurants} />
         </TabPanel>
         <TabPanel value="Location">
           <Location />
