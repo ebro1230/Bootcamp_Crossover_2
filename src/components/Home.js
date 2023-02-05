@@ -14,18 +14,13 @@ import useFetch from "./useFetch";
 
 function Home() {
   const navigation = useNavigate();
-  const url =
-    "https://app-7a20b2f8-6eda-430c-9229-4662dc2a238b.cleverapps.io/restaurant";
+  const url = "https://api.mockaroo.com/api/4abe4ca0?count=10&key=6f711830";
   const [restaurantType, setRestaurantType] = useState("");
   const { restaurants, isLoading, error } = useFetch(url);
 
   const handleOnClick = (e) => {
-<<<<<<< HEAD
-    navigation(`/${e.name}`);
-=======
     console.log(e);
     navigation(`/${e.target.id}`);
->>>>>>> cd911b694b6c3e0d974010933f6e1680a671b947
   };
   const handleChange = (e) => {
     setRestaurantType(e.target.value);
@@ -71,7 +66,7 @@ function Home() {
                   <CardMedia
                     component="img"
                     height="250"
-                    image={restaurant.restaurant_logo}
+                    image={restaurant.img}
                     alt="Image of the Restaurant"
                     id={restaurant.name}
                   />
