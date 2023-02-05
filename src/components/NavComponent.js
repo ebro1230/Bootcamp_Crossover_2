@@ -16,7 +16,7 @@ export default function NavComponent() {
         setRestaurant(restaurant);
       }
     });
-  }, [restaurants]);
+  }, [restaurants, restaurantName]);
 
   return (
     <div className="navContainer">

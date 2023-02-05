@@ -1,29 +1,53 @@
 import React, { useState, useEffect } from "react";
 import { MapContainer, TileLayer, useMap, Marker, Popup } from "react-leaflet";
+import markerIconPng from "leaflet/dist/images/marker-icon.png";
+import { Icon } from "leaflet";
+
+import "leaflet/dist/leaflet.css";
+
+const RecenterAutomatically = ({ lat, lng }) => {
+  const map = useMap();
+  useEffect(() => {
+    map.setView([lat, lng]);
+  }, [lat, lng]);
+  return null;
+};
 
 export default function Location(props) {
   return (
     <>
       {props.position ? (
-        <div className="mapContainer">
-          <MapContainer
-            center={props.position}
-            zoom={13}
-            scrollWheelZoom={false}
+        <MapContainer
+          center={props.position}
+          zoom={16}
+          scrollWheelZoom={false}
+          className="mapContainer"
+        >
+          <RecenterAutomatically
+            lat={props.position[0]}
+            lng={props.position[1]}
+          />
+          <TileLayer
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          <Marker
+            position={props.position}
+            icon={
+              new Icon({
+                iconUrl: markerIconPng,
+                iconSize: [25, 41],
+                iconAnchor: [12, 41],
+              })
+            }
           >
-            <TileLayer
-              attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-              url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            />
-            <Marker position={props.position}>
-              <Popup>
-                {props.restaurant.name} <br /> {props.restaurant.street} <br />{" "}
-                {props.restaurant.zip}, {props.restaurant.city} <br />
-                {props.restaurant.state}, {props.restaurant.country}`.
-              </Popup>
-            </Marker>
-          </MapContainer>
-        </div>
+            <Popup>
+              {props.restaurant.name} <br /> {props.restaurant.street} <br />{" "}
+              {props.restaurant.zip}, {props.restaurant.city} <br />
+              {props.restaurant.state}, {props.restaurant.country}`.
+            </Popup>
+          </Marker>
+        </MapContainer>
       ) : null}
     </>
   );

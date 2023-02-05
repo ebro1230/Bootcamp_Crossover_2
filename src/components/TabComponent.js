@@ -37,7 +37,7 @@ export default function LabTabs(props) {
       .catch((errorMessage) => {
         console.log(`${errorMessage}`);
       });
-  }, []);
+  }, [address]);
 
   return (
     <Box sx={{ width: "100%", typography: "body1" }}>
