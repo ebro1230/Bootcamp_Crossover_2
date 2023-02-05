@@ -79,9 +79,12 @@ h1 {
   height: auto !important;
 }
 .mapContainer {
-  height: 900px !important;
+  height: 665px;;
 }
 .restaurant-img {
   height: 200px;
   width: 200px;
+}
+.resize{
+  height:100%;
 }
