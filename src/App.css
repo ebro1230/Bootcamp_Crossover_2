@@ -78,3 +78,6 @@ h1 {
   width: 300px !important;
   height: auto !important;
 }
+.mapContainer{
+  height: 900px !important;
+}
