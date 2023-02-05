@@ -9,7 +9,6 @@ export default function NavComponent() {
   const { restaurants, isLoading, error, types } = useFetch(url);
   const { restaurantName } = useParams();
   const [restaurant, setRestaurant] = useState(null);
-  const [urlendpoint, setUrlendpoint] = useState("");
   useEffect(() => {
     restaurants.forEach((restaurant) => {
       if (restaurant.name == restaurantName) {
@@ -20,16 +19,9 @@ export default function NavComponent() {
 
   return (
     <div className="navContainer">
-      <Sidebar
-        restaurants={restaurants}
-        settingEndpoint={(e) => setUrlendpoint(e)}
-      />
+      <Sidebar restaurants={restaurants} />
       {restaurant ? (
-        <TabComponent
-          restaurant={restaurant}
-          urlendpoint={urlendpoint}
-          restaurants={restaurants}
-        />
+        <TabComponent restaurant={restaurant} restaurants={restaurants} />
       ) : null}
     </div>
   );

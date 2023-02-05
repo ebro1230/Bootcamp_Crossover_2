@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
 
-function Sidebar({ settingEndpoint, restaurants }) {
+function Sidebar({ restaurants }) {
   return (
     <aside className="sidebarNav">
       <NavLink
@@ -16,7 +16,6 @@ function Sidebar({ settingEndpoint, restaurants }) {
         return (
           <NavLink
             className="navlinks"
-            onClick={() => settingEndpoint(restaurant.name)}
             to={"/" + `${restaurant.name}`}
             style={({ isActive }) => ({ color: isActive ? "#00bcd4" : null })}
           >

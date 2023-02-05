@@ -15,7 +15,6 @@ export default function LabTabs(props) {
   const [position, setPosition] = useState(null);
   const address = `${props.restaurant.street}+${props.restaurant.zip}+${props.restaurant.city}+${props.restaurant.state}+${props.restaurant.country}`;
   const restaurants = props.restaurants;
-  const urlendpoint = props.urlendpoint;
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -52,7 +51,7 @@ export default function LabTabs(props) {
           </TabList>
         </Box>
         <TabPanel value="Details">
-          <Details urlendpoint={urlendpoint} restaurants={restaurants} />
+          <Details restaurant={props.restaurant} />
         </TabPanel>
         <TabPanel value="Location">
           {position ? (
@@ -63,7 +62,7 @@ export default function LabTabs(props) {
           <Menu />
         </TabPanel>
         <TabPanel value="Pictures">
-          <Pictures />
+          <Pictures restaurant={props.restaurant} />
         </TabPanel>
       </TabContext>
     </Box>
