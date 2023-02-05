@@ -12,6 +12,7 @@
   border-right: solid 1px black;
   flex-direction: column;
   display: flex;
+  flex-wrap: wrap;
   width: 20%;
   height: 100vh;
   justify-content: space-around;
@@ -46,34 +47,34 @@
 h1 {
   font-size: 3rem;
 }
-.restaurants{
-  display:flex;
+.restaurants {
+  display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
-.restaurantCard{
-  flex:40% !important;
+.restaurantCard {
+  flex: 40% !important;
   margin: 10px !important;
   padding: 10px !important;
   display: flex !important;
   justify-content: center !important;
 }
-.filter{
-  display:flex;
+.filter {
+  display: flex;
   justify-content: center;
 }
-.MuiCardMedia-root{
-  width:300px !important;
+.MuiCardMedia-root {
+  width: 300px !important;
   height: 300px !important;
 }
-.card{
+.card {
   width: 100% !important;
   object-fit: contain !important;
   padding-left: 0.3rem;
   padding-right: 0.3rem;
 }
 
-.MuiCard-root{
+.MuiCard-root {
   width: 300px !important;
   height: auto !important;
 }
