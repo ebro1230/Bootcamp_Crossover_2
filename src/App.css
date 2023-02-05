@@ -79,7 +79,7 @@ h1 {
   height: auto !important;
 }
 .mapContainer {
-  height: 665px;;
+  height: 80vh;
 }
 .details-tab-container {
   justify-content: center;
@@ -95,10 +95,12 @@ h1 {
   border-radius: 50%;
 }
 .img-tab-container {
+  width: 80%;
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
+  margin: 0 auto;
 }
 .img-tab-container img {
   width: 180px;
@@ -120,6 +122,6 @@ h1 {
 .restaurant-menu img:hover {
   cursor: pointer;
 }
-.resize{
-  height:100%;
+.resize {
+  height: 100%;
 }
