@@ -79,7 +79,7 @@ h1 {
   height: auto !important;
 }
 .mapContainer {
-  height: 900px !important;
+  height: 665px;;
 }
 .details-tab-container {
   justify-content: center;
@@ -119,4 +119,7 @@ h1 {
 }
 .restaurant-menu img:hover {
   cursor: pointer;
+}
+.resize{
+  height:100%;
 }

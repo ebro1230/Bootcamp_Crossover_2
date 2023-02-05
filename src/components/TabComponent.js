@@ -14,7 +14,10 @@ export default function LabTabs(props) {
   const [value, setValue] = React.useState("Details");
   const [position, setPosition] = useState(null);
   const address = `${props.restaurant.street}+${props.restaurant.zip}+${props.restaurant.city}+${props.restaurant.state}+${props.restaurant.country}`;
+<<<<<<< HEAD
   // const restaurants = props.restaurants;
+=======
+>>>>>>> d96cf77b6a5f34a367c35723a44b8e8eacea807a
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
