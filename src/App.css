@@ -77,3 +77,6 @@ h1 {
   width: 300px !important;
   height: auto !important;
 }
+.mapContainer{
+  display:flex
+}
