@@ -9,18 +9,25 @@ import Details from "./TabComponents/Details";
 import Location from "./TabComponents/Location";
 import Menu from "./TabComponents/Menu";
 import Pictures from "./TabComponents/Pictures";
+import useWindowResize from "./useWindowResize";
 
 export default function LabTabs(props) {
   const [value, setValue] = React.useState("Details");
   const [position, setPosition] = useState(null);
+  const { width, height, findScreenSize } = useWindowResize();
   const address = `${props.restaurant.street}+${props.restaurant.zip}+${props.restaurant.city}+${props.restaurant.state}+${props.restaurant.country}`;
-<<<<<<< HEAD
-  // const restaurants = props.restaurants;
-=======
->>>>>>> d96cf77b6a5f34a367c35723a44b8e8eacea807a
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
+
+  let num = 1;
+  useEffect(() => {
+    findScreenSize();
+  }, []);
+
+  window.addEventListener("resize", () => {
+    findScreenSize();
+  });
 
   useEffect(() => {
     fetch(
@@ -58,7 +65,11 @@ export default function LabTabs(props) {
         </TabPanel>
         <TabPanel value="Location">
           {position ? (
-            <Location restaurant={props.restaurant} position={position} />
+            <Location
+              restaurant={props.restaurant}
+              position={position}
+              height={height - 50}
+            />
           ) : null}
         </TabPanel>
         <TabPanel value="Menu">

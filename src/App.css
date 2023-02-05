@@ -79,7 +79,10 @@ h1 {
   height: auto !important;
 }
 .mapContainer {
-  height: 665px;;
+  height:100%;
+}
+.css-13xfq8m-MuiTabPanel-root{
+  padding:0px !important;
 }
 .details-tab-container {
   justify-content: center;
