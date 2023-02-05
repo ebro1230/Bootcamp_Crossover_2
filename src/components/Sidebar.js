@@ -1,7 +1,8 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
 
-function Sidebar() {
+function Sidebar(props) {
+  const restaurants = props.restaurants;
   return (
     <aside className="sidebarNav">
       <NavLink
@@ -12,24 +13,13 @@ function Sidebar() {
         Homepage
       </NavLink>
       <hr />
-      <NavLink className="navlinks" to="">
-        Restaurant one
-      </NavLink>
-      <NavLink className="navlinks" to="">
-        Restaurant two
-      </NavLink>
-      <NavLink className="navlinks" to="">
-        Restaurant three
-      </NavLink>
-      <NavLink className="navlinks" to="">
-        Restaurant four
-      </NavLink>
-      <NavLink className="navlinks" to="">
-        Restaurant five
-      </NavLink>
-      <NavLink className="navlinks" to="">
-        Restaurant six
-      </NavLink>
+      {restaurants.map((restaurant) => {
+        return (
+          <NavLink className="navlinks" to="">
+            {restaurant.name}
+          </NavLink>
+        );
+      })}
       <Outlet />
     </aside>
   );
