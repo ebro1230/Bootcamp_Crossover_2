@@ -11,21 +11,35 @@ import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
 import useFetch from "./useFetch";
+import moneySignGold from "./Dollar_Sign_(Gold).jpg";
+import moneySignBlack from "./Dollar_Sign_(Black).jpg";
 
 function Home() {
   const navigation = useNavigate();
-  const url = "https://api.mockaroo.com/api/4abe4ca0?count=10&key=6f711830";
+  const url = "./Bootcamp_Crossover_2.json";
   const [restaurantType, setRestaurantType] = useState("");
-  const { restaurants, isLoading, error } = useFetch(url);
+  const [typesofFood, setTypesofFood] = useState([]);
+  let { restaurants, isLoading, error, types } = useFetch(url);
 
   const handleOnClick = (e) => {
-    console.log(e);
     navigation(`/${e.target.id}`);
   };
   const handleChange = (e) => {
     setRestaurantType(e.target.value);
   };
-  console.log(restaurants);
+  const handleTypes = (restaurants) => {
+    restaurants.forEach((restaurant) => {
+      restaurant.tags.map((tag) => {
+        if (!types.includes(tag)) {
+          types = [...types, tag];
+        }
+      });
+    });
+  };
+  useEffect(() => {
+    handleTypes(restaurants);
+    setTypesofFood(types);
+  }, [restaurants]);
 
   return (
     <>
@@ -40,48 +54,312 @@ function Home() {
           <h1>Best Restaurants in Cologne</h1>
         </div>
       </div>
-      <FormControl sx={{ m: 1, minWidth: 800 }}>
-        <InputLabel id="Type of Restaurant">Restaurant Type</InputLabel>
-        <Select
-          labelId="Type of Restaurant"
-          id="Restaurant Type"
-          value={restaurantType}
-          autoWidth
-          label="Restaurant Type"
-          onChange={handleChange}
-        ></Select>
-      </FormControl>
+      <div className="filter">
+        <FormControl sx={{ m: 1, minWidth: 800 }}>
+          <InputLabel id="Type of Restaurant">Restaurant Type</InputLabel>
+          <Select
+            labelId="Type of Restaurant"
+            id="Restaurant Type"
+            value={restaurantType}
+            autoWidth
+            label="Restaurant Type"
+            onChange={handleChange}
+          >
+            <MenuItem value="">Any</MenuItem>
+            {typesofFood.length
+              ? typesofFood.map((type) => {
+                  return <MenuItem value={type}>{type}</MenuItem>;
+                })
+              : null}
+          </Select>
+        </FormControl>
+      </div>
       <div className="restaurants">
         {isLoading ? (
           <LoadingIndicator />
         ) : restaurants.length ? (
-          restaurants.map((restaurant) => {
-            return (
-              <Card
-                sx={{ maxWidth: 345 }}
-                key={restaurant.name}
-                id={restaurant.name}
-              >
-                <CardActionArea id={restaurant.name} onClick={handleOnClick}>
-                  <CardMedia
-                    component="img"
-                    height="250"
-                    image={restaurant.img}
-                    alt="Image of the Restaurant"
+          restaurantType ? (
+            restaurants.map((restaurant) => {
+              if (restaurant.tags.includes(restaurantType)) {
+                return (
+                  <div className="restaurantCard">
+                    <Card
+                      width="300"
+                      height="300"
+                      key={restaurant.name}
+                      id={restaurant.name}
+                    >
+                      <CardActionArea
+                        id={restaurant.name}
+                        onClick={handleOnClick}
+                      >
+                        <CardMedia
+                          component="img"
+                          className="card"
+                          image={restaurant.logo}
+                          alt="Image of the Restaurant"
+                          id={restaurant.name}
+                        />
+                        <CardContent id={restaurant.name}>
+                          <Typography
+                            id={restaurant.name}
+                            gutterBottom
+                            variant="h5"
+                            component="div"
+                          >
+                            {restaurant.name}
+                          </Typography>
+                          <Typography
+                            id={restaurant.name}
+                            variant="body2"
+                            color="text.secondary"
+                          >
+                            {restaurant.tags.map((tag) => (
+                              <p>{tag} </p>
+                            ))}
+                            <br />
+                            {restaurant.price === 1 ? (
+                              <>
+                                <img
+                                  src={moneySignGold}
+                                  alt="Gold Money Sign"
+                                />
+                                <img
+                                  src={moneySignBlack}
+                                  alt="Black Money Sign"
+                                />
+                                <img
+                                  src={moneySignBlack}
+                                  alt="Black Money Sign"
+                                />
+                                <img
+                                  src={moneySignBlack}
+                                  alt="Black Money Sign"
+                                />
+                                <img
+                                  src={moneySignBlack}
+                                  alt="Black Money Sign"
+                                />
+                              </>
+                            ) : restaurant.price === 2 ? (
+                              <>
+                                <img
+                                  src={moneySignGold}
+                                  alt="Gold Money Sign"
+                                />
+                                <img
+                                  src={moneySignGold}
+                                  alt="Gold Money Sign"
+                                />
+                                <img
+                                  src={moneySignBlack}
+                                  alt="Black Money Sign"
+                                />
+                                <img
+                                  src={moneySignBlack}
+                                  alt="Black Money Sign"
+                                />
+                                <img
+                                  src={moneySignBlack}
+                                  alt="Black Money Sign"
+                                />
+                              </>
+                            ) : restaurant.price === 3 ? (
+                              <>
+                                <img
+                                  src={moneySignGold}
+                                  alt="Gold Money Sign"
+                                />
+                                <img
+                                  src={moneySignGold}
+                                  alt="Gold Money Sign"
+                                />
+                                <img
+                                  src={moneySignGold}
+                                  alt="Gold Money Sign"
+                                />
+                                <img
+                                  src={moneySignBlack}
+                                  alt="Black Money Sign"
+                                />
+                                <img
+                                  src={moneySignBlack}
+                                  alt="Black Money Sign"
+                                />
+                              </>
+                            ) : restaurant.price === 4 ? (
+                              <>
+                                <img
+                                  src={moneySignGold}
+                                  alt="Gold Money Sign"
+                                />
+                                <img
+                                  src={moneySignGold}
+                                  alt="Gold Money Sign"
+                                />
+                                <img
+                                  src={moneySignGold}
+                                  alt="Gold Money Sign"
+                                />
+                                <img
+                                  src={moneySignGold}
+                                  alt="Gold Money Sign"
+                                />
+                                <img
+                                  src={moneySignBlack}
+                                  alt="Black Money Sign"
+                                />
+                              </>
+                            ) : restaurant.price === 5 ? (
+                              <>
+                                <img
+                                  src={moneySignGold}
+                                  alt="Gold Money Sign"
+                                />
+                                <img
+                                  src={moneySignGold}
+                                  alt="Gold Money Sign"
+                                />
+                                <img
+                                  src={moneySignGold}
+                                  alt="Gold Money Sign"
+                                />
+                                <img
+                                  src={moneySignGold}
+                                  alt="Gold Money Sign"
+                                />
+                                <img
+                                  src={moneySignGold}
+                                  alt="Gold Money Sign"
+                                />
+                              </>
+                            ) : null}
+                          </Typography>
+                        </CardContent>
+                      </CardActionArea>
+                    </Card>
+                  </div>
+                );
+              }
+            })
+          ) : (
+            restaurants.map((restaurant) => {
+              return (
+                <div className="restaurantCard">
+                  <Card
+                    width="300"
+                    height="300"
+                    key={restaurant.name}
                     id={restaurant.name}
-                  />
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                      {restaurant.name}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      ''
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>
-            );
-          })
+                  >
+                    <CardActionArea
+                      id={restaurant.name}
+                      onClick={handleOnClick}
+                    >
+                      <CardMedia
+                        component="img"
+                        className="card"
+                        image={restaurant.logo}
+                        alt="Image of the Restaurant"
+                        id={restaurant.name}
+                      />
+                      <CardContent id={restaurant.name}>
+                        <Typography
+                          id={restaurant.name}
+                          gutterBottom
+                          variant="h5"
+                          component="div"
+                        >
+                          {restaurant.name}
+                        </Typography>
+                        <Typography
+                          id={restaurant.name}
+                          variant="body2"
+                          color="text.secondary"
+                        >
+                          {restaurant.tags.map((tag) => (
+                            <p>{tag} </p>
+                          ))}
+                          <br />
+                          {restaurant.price === 1 ? (
+                            <>
+                              <img src={moneySignGold} alt="Gold Money Sign" />
+                              <img
+                                src={moneySignBlack}
+                                alt="Black Money Sign"
+                              />
+                              <img
+                                src={moneySignBlack}
+                                alt="Black Money Sign"
+                              />
+                              <img
+                                src={moneySignBlack}
+                                alt="Black Money Sign"
+                              />
+                              <img
+                                src={moneySignBlack}
+                                alt="Black Money Sign"
+                              />
+                            </>
+                          ) : restaurant.price === 2 ? (
+                            <>
+                              <img src={moneySignGold} alt="Gold Money Sign" />
+                              <img src={moneySignGold} alt="Gold Money Sign" />
+                              <img
+                                src={moneySignBlack}
+                                alt="Black Money Sign"
+                              />
+                              <img
+                                src={moneySignBlack}
+                                alt="Black Money Sign"
+                              />
+                              <img
+                                src={moneySignBlack}
+                                alt="Black Money Sign"
+                              />
+                            </>
+                          ) : restaurant.price === 3 ? (
+                            <>
+                              <img src={moneySignGold} alt="Gold Money Sign" />
+                              <img src={moneySignGold} alt="Gold Money Sign" />
+                              <img src={moneySignGold} alt="Gold Money Sign" />
+                              <img
+                                src={moneySignBlack}
+                                alt="Black Money Sign"
+                              />
+                              <img
+                                src={moneySignBlack}
+                                alt="Black Money Sign"
+                              />
+                            </>
+                          ) : restaurant.price === 4 ? (
+                            <>
+                              <img src={moneySignGold} alt="Gold Money Sign" />
+                              <img src={moneySignGold} alt="Gold Money Sign" />
+                              <img src={moneySignGold} alt="Gold Money Sign" />
+                              <img src={moneySignGold} alt="Gold Money Sign" />
+                              <img
+                                src={moneySignBlack}
+                                alt="Black Money Sign"
+                              />
+                            </>
+                          ) : restaurant.price === 5 ? (
+                            <>
+                              <img src={moneySignGold} alt="Gold Money Sign" />
+                              <img src={moneySignGold} alt="Gold Money Sign" />
+                              <img src={moneySignGold} alt="Gold Money Sign" />
+                              <img src={moneySignGold} alt="Gold Money Sign" />
+                              <img src={moneySignGold} alt="Gold Money Sign" />
+                            </>
+                          ) : null}
+                        </Typography>
+                      </CardContent>
+                    </CardActionArea>
+                  </Card>
+                </div>
+              );
+            })
+          )
         ) : (
           <h1>An Error Has Occurred: {error}</h1>
         )}
@@ -91,38 +369,3 @@ function Home() {
 }
 
 export default Home;
-
-/*Goes between the Select
-{restaurants.length
-            ? restaurants.map((restaurant) => {
-                restaurant.map((tag) => {
-                  <MenuItem value={tag}>{tag}</MenuItem>;
-                });
-              })
-            : null}
-*/
-
-/*      restaurantType === true ? (
-          restaurants.map((restaurant) => {
-            if (restaurant.tags.include(restaurantType)) {
-              <Card sx={{ maxWidth: 345 }}>
-                <CardActionArea onClick={handleOnClick}>
-                  <CardMedia
-                    component="img"
-                    height="140"
-                    image={restaurant.restaurant_logo}
-                    alt="Image of the Restaurant"
-                  />
-                  <CardContent>
-                    <Typography gutterBottom variant="h5" component="div">
-                      {restaurant.name}
-                    </Typography>
-                    <Typography variant="body2" color="text.secondary">
-                      {restaurant.tags}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </Card>;
-            }
-          })
-        ) : (*/

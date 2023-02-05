@@ -48,5 +48,32 @@ h1 {
 }
 .restaurants{
   display:flex;
+  flex-wrap: wrap;
   justify-content: space-around;
+}
+.restaurantCard{
+  flex:40% !important;
+  margin: 10px !important;
+  padding: 10px !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+.filter{
+  display:flex;
+  justify-content: center;
+}
+.MuiCardMedia-root{
+  width:300px !important;
+  height: 300px !important;
+}
+.card{
+  width: 100% !important;
+  object-fit: contain !important;
+  padding-left: 0.3rem;
+  padding-right: 0.3rem;
+}
+
+.MuiCard-root{
+  width: 300px !important;
+  height: auto !important;
 }
