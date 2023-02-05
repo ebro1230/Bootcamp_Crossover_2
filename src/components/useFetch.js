@@ -11,7 +11,9 @@ export default function useFetch(url) {
     fetch(url)
       .then((response) => {
         if (!response.ok) {
-          setError(`HTTP Status Error: ${response.status}`);
+          return (
+            setError(`HTTP Status Error: ${response.status}`), console.log(url)
+          );
         } else {
           return response;
         }

@@ -15,7 +15,11 @@ function Sidebar(props) {
       <hr />
       {restaurants.map((restaurant) => {
         return (
-          <NavLink className="navlinks" to="">
+          <NavLink
+            className="navlinks"
+            to={"/" + `${restaurant.name}`}
+            style={({ isActive }) => ({ color: isActive ? "#00bcd4" : null })}
+          >
             {restaurant.name}
           </NavLink>
         );
