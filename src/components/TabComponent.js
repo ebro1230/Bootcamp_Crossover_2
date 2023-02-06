@@ -15,6 +15,7 @@ export default function LabTabs(props) {
   const [value, setValue] = React.useState("Details");
   const [position, setPosition] = useState(null);
   const { width, height, findScreenSize } = useWindowResize();
+  const [error, setError] = useState(null);
   const address = `${props.restaurant.street}+${props.restaurant.zip}+${props.restaurant.city}+${props.restaurant.state}+${props.restaurant.country}`;
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -35,7 +36,7 @@ export default function LabTabs(props) {
     )
       .then((response) => {
         if (!response.ok) {
-          console.log(`HTTP Status Error: ${response.status}`);
+          setError(response.status);
         } else {
           return response;
         }
@@ -45,7 +46,7 @@ export default function LabTabs(props) {
         setPosition([json.data[0].latitude, json.data[0].longitude]);
       })
       .catch((errorMessage) => {
-        console.log(`${errorMessage}`);
+        setError(errorMessage);
       });
   }, [address]);
 
@@ -69,6 +70,7 @@ export default function LabTabs(props) {
               restaurant={props.restaurant}
               position={position}
               height={height - 50}
+              error={error}
             />
           ) : null}
         </TabPanel>
