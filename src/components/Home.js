@@ -54,25 +54,27 @@ function Home() {
           <h1>Best Restaurants in Cologne</h1>
         </div>
       </div>
-      <div className="filter">
-        <FormControl sx={{ m: 1, minWidth: 800 }}>
-          <InputLabel id="Type of Restaurant">Restaurant Type</InputLabel>
-          <Select
-            labelId="Type of Restaurant"
-            id="Restaurant Type"
-            value={restaurantType}
-            autoWidth
-            label="Restaurant Type"
-            onChange={handleChange}
-          >
-            <MenuItem value="">Any</MenuItem>
-            {typesofFood.length
-              ? typesofFood.map((type) => {
-                  return <MenuItem value={type}>{type}</MenuItem>;
-                })
-              : null}
-          </Select>
-        </FormControl>
+      <div className="filter-center">
+        <div className="filter">
+          <FormControl sx={{ m: 1, width: 100 + "%" }}>
+            <InputLabel id="Type of Restaurant">Restaurant Type</InputLabel>
+            <Select
+              labelId="Type of Restaurant"
+              id="Restaurant Type"
+              value={restaurantType}
+              label="Restaurant Type"
+              onChange={handleChange}
+              className="restaurant-type"
+            >
+              <MenuItem value="">Any</MenuItem>
+              {typesofFood.length
+                ? typesofFood.map((type) => {
+                    return <MenuItem value={type}>{type}</MenuItem>;
+                  })
+                : null}
+            </Select>
+          </FormControl>
+        </div>
       </div>
       <div className="restaurants">
         {isLoading ? (

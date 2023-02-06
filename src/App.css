@@ -63,6 +63,11 @@ h1 {
 .filter {
   display: flex;
   justify-content: center;
+  width: 800px;
+}
+.filter-center{
+  display: flex;
+  justify-content: center;
 }
 .MuiCardMedia-root {
   width: 300px !important;
