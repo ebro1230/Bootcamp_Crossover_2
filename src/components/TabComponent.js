@@ -72,6 +72,8 @@ export default function LabTabs(props) {
               height={height - 50}
               error={error}
             />
+          ) : error ? (
+            <h1>{error}</h1>
           ) : null}
         </TabPanel>
         <TabPanel value="Menu">

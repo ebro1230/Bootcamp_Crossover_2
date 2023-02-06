@@ -58,8 +58,6 @@ export default function Location(props) {
             </Marker>
           </MapContainer>
         </div>
-      ) : props.error ? (
-        <h1>{props.error}</h1>
       ) : null}
     </>
   );
