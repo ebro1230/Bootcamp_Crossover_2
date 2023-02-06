@@ -15,6 +15,7 @@ function Sidebar({ restaurants }) {
       {restaurants.map((restaurant) => {
         return (
           <NavLink
+            key={restaurant.name}
             className="navlinks"
             to={"/" + `${restaurant.name}`}
             style={({ isActive }) => ({ color: isActive ? "#00bcd4" : null })}
