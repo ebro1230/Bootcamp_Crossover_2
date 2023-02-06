@@ -68,7 +68,8 @@
         "delivery":"true",
         "menu":"https://qrcgcustomers.s3-eu-west-1.amazonaws.com/account8406521/34007551_1.pdf?0.44641882024104684",
         "price":2,
-        "tags":["Cafe", "International", "Vegetarian"]
+        "tags":["Cafe", "International", "Vegetarian"],
+        "pics":["https://media.graphassets.com/https://media.graphassets.com/ILLyNgkTTYWFEvUGe9RU", "https://media.graphassets.com/https://media.graphassets.com/4Wbaz5hfSnaP10MI7GzI", "https://media.graphassets.com/https://media.graphassets.com/dce1BxNYSZKDTxlyTzeB", "https://media.graphassets.com/https://media.graphassets.com/66v5dR46SXm3GZ3524J4", "https://media.graphassets.com/https://media.graphassets.com/IR2wvljrTWO2Tx0tPFZg", "https://media.graphassets.com/https://media.graphassets.com/ueRagqfVQ7avMzMmyfIG", "https://media.graphassets.com/https://media.graphassets.com/Oa5g3zr6SdKgAbPYiMf2", "https://media.graphassets.com/https://media.graphassets.com/lV74e4D4SQq4Sf1LUF3B", "https://media.graphassets.com/https://media.graphassets.com/Vn2lHBKSbuvi9fOv3N4h", "https://media.graphassets.com/https://media.graphassets.com/fzMI8EoSzRzLTgjjbatg"]
     },
     {
         "name":"Kaizen",
@@ -85,7 +86,8 @@
         "delivery":"true",
         "menu":"https://www.restaurant-kaizen.de/take-away-menu",
         "price":3,
-        "tags":["Japanese", "Sushi", "Asian"]
+        "tags":["Japanese", "Sushi", "Asian"],
+        "pics":["https://static.wixstatic.com/media/b8ebfd_b402274e5f264112a71795fd9060c22c~mv2.jpg/v1/fit/w_204,h_199,q_90/b8ebfd_b402274e5f264112a71795fd9060c22c~mv2.jpg", "https://static.wixstatic.com/media/b8ebfd_55f27d9013e249f98f515cfc7a4aaea4~mv2.jpg/v1/fit/w_204,h_199,q_90/b8ebfd_55f27d9013e249f98f515cfc7a4aaea4~mv2.jpg", "https://static.wixstatic.com/media/b8ebfd_a1510f0ff84a4e2a9af67a71f7835957~mv2.jpg/v1/fit/w_443,h_343,q_90/b8ebfd_a1510f0ff84a4e2a9af67a71f7835957~mv2.jpg", "https://static.wixstatic.com/media/b8ebfd_a74fbdb74af94ef5854ec695f2e15802~mv2.jpg/v1/fit/w_367,h_256,q_90/b8ebfd_a74fbdb74af94ef5854ec695f2e15802~mv2.jpg", "https://static.wixstatic.com/media/b8ebfd_1696966ee0b34c1e806b28e48c2be932~mv2.jpg/v1/fit/w_367,h_286,q_90/b8ebfd_1696966ee0b34c1e806b28e48c2be932~mv2.jpg", "https://static.wixstatic.com/media/b8ebfd_9c7911efb77240b9a3b3b3d15d6ae81a~mv2.jpg/v1/fit/w_479,h_370,q_90/b8ebfd_9c7911efb77240b9a3b3b3d15d6ae81a~mv2.jpg", "https://static.wixstatic.com/media/b8ebfd_206a91aba8224ff8b37520c0484ff037~mv2.jpg/v1/fit/w_224,h_172,q_90/b8ebfd_206a91aba8224ff8b37520c0484ff037~mv2.jpg", "https://static.wixstatic.com/media/b8ebfd_1676dcc0069747eeb9641f2107b51e5a~mv2.jpg/v1/fit/w_220,h_172,q_90/b8ebfd_1676dcc0069747eeb9641f2107b51e5a~mv2.jpg", "https://static.wixstatic.com/media/b8ebfd_c86d61c5bbe44a40b398db08e7fa7374~mv2.jpg/v1/fit/w_342,h_266,q_90/b8ebfd_c86d61c5bbe44a40b398db08e7fa7374~mv2.jpg", "https://static.wixstatic.com/media/b8ebfd_70cae0689e4947e4925977c47d1726b7~mv2.jpg/v1/fit/w_342,h_267,q_90/b8ebfd_70cae0689e4947e4925977c47d1726b7~mv2.jpg"]
     },
     {
         "name":"Kamasutra Indian Restaurant",
@@ -102,7 +104,8 @@
         "delivery":"true",
         "menu":"http://www.kamasutra-koeln.de/a-la-carte_de.html",
         "price":3,
-        "tags":["Indian", "Vegetarian", "Vegan"]
+        "tags":["Indian", "Vegetarian", "Vegan"],
+        "pics":["http://www.kamasutra-koeln.de/images/gallery/Gall-1.jpg", "http://www.kamasutra-koeln.de/images/gallery/Gall-12.jpg", "http://www.kamasutra-koeln.de/images/gallery/Gall-13.jpg", "http://www.kamasutra-koeln.de/images/gallery/Gall-14.jpg", "http://www.kamasutra-koeln.de/images/gallery/Gall-15.jpg", "http://www.kamasutra-koeln.de/images/gallery/Gall-16.jpg", "http://www.kamasutra-koeln.de/images/gallery/Gall-17.jpg", "http://www.kamasutra-koeln.de/images/gallery/Gall-18.jpg", "http://www.kamasutra-koeln.de/images/gallery/Gall-19.jpg", "http://www.kamasutra-koeln.de/images/gallery/Gall-20.jpg"]
     },
     {
         "name":"Caruso Pastabar",
@@ -119,7 +122,8 @@
         "delivery":"false",
         "menu":"https://www.caruso-pastabar.de/speisen/",
         "price":4,
-        "tags":["Italian", "Mediterranean", "Vegetarian"]
+        "tags":["Italian", "Mediterranean", "Vegetarian"],
+        "pics":["https://www.caruso-pastabar.de/wp-content/uploads/2022/01/carusoDAN_1906-1024x1536.jpg", "https://www.caruso-pastabar.de/wp-content/uploads/2022/05/2022_05_Caruso-Innen-2.jpg", "https://media-cdn.tripadvisor.com/media/photo-p/15/01/5f/4d/tortelli.jpg", "https://media-cdn.tripadvisor.com/media/photo-o/0c/92/69/2c/photo0jpg.jpg"]
     },
     {
         "name":"Bulgogi-Haus",
@@ -136,7 +140,8 @@
         "delivery":"false",
         "menu":"https://bulgogi-haus.de/#menu",
         "price":3,
-        "tags":["Barbecue", "Asian", "Korean"]
+        "tags":["Barbecue", "Asian", "Korean"],
+        "pics":["https://bulgogi-haus.de/fileadmin/user_upload/gallery/2.jpg", "https://bulgogi-haus.de/fileadmin/user_upload/gallery/3.jpg", "https://bulgogi-haus.de/fileadmin/user_upload/gallery/4.jpg", "https://bulgogi-haus.de/fileadmin/user_upload/gallery/15.jpg", "https://bulgogi-haus.de/fileadmin/user_upload/gallery/5.jpg", "https://bulgogi-haus.de/fileadmin/user_upload/gallery/6.jpg", "https://bulgogi-haus.de/fileadmin/user_upload/gallery/9.jpg", "https://bulgogi-haus.de/fileadmin/user_upload/gallery/11.jpg", "https://bulgogi-haus.de/fileadmin/user_upload/gallery/12.jpg", "https://bulgogi-haus.de/fileadmin/user_upload/gallery/13.jpg"]
     },
     {
         "name":"Zippiri Gourmetwerkstatt & Weinbar",
@@ -153,7 +158,8 @@
         "delivery":"false",
         "menu":"https://zippiri.de/wp-content/uploads/2022/10/Speisekarte-Zippiri-2022.pdf",
         "price":5,
-        "tags":["Italian", "Mediterranean", "European"]
+        "tags":["Italian", "Mediterranean", "European"],
+        "pics":["https://zippiri.de/wp-content/uploads/2017/11/produkte-slider003.jpg", "https://zippiri.de/wp-content/uploads/2017/02/produkte-slider06.jpg", "https://zippiri.de/wp-content/uploads/2017/02/produkte-slider05.jpg", "https://zippiri.de/wp-content/uploads/2017/02/produkte-slider04.jpg", "https://zippiri.de/wp-content/uploads/2017/02/produkte-slider01.jpg", "https://zippiri.de/wp-content/uploads/2017/02/pasta-slider01.jpg", "https://zippiri.de/wp-content/uploads/2017/02/pasta-slider02.jpg", "https://zippiri.de/wp-content/uploads/2017/02/pasta-slider03.jpg", "https://zippiri.de/wp-content/uploads/2017/02/pasta-slider04.jpg", "https://zippiri.de/wp-content/uploads/2017/02/pasta-slider05.jpg"]
     },
     {
         "name":"Restaurant Brucken",
@@ -170,6 +176,7 @@
         "delivery":"true",
         "menu":"https://www.restaurant-bruecken.com/speisekarte-1/hauptgerichte/",
         "price":3,
-        "tags":["German", "European"]
+        "tags":["German", "European"],
+        "pics":["https://image.jimcdn.com/app/cms/image/transf/none/path/s49073bcefd24a21a/image/ica83de9264840d40/version/1457267386/image.jpg", "https://image.jimcdn.com/app/cms/image/transf/dimension=1920x400:format=jpg/path/s49073bcefd24a21a/image/i926dd3061a7ad94b/version/1457267386/image.jpg", "https://image.jimcdn.com/app/cms/image/transf/dimension=1920x400:format=jpg/path/s49073bcefd24a21a/image/if489476fa1083ffa/version/1457267386/image.jpg", "https://image.jimcdn.com/app/cms/image/transf/dimension=1920x400:format=jpg/path/s49073bcefd24a21a/image/i28de199905561af5/version/1457267386/image.jpg", "https://image.jimcdn.com/app/cms/image/transf/dimension=1920x400:format=jpg/path/s49073bcefd24a21a/image/i449129098e88e456/version/1457267386/image.jpg", "https://image.jimcdn.com/app/cms/image/transf/dimension=1920x400:format=jpg/path/s49073bcefd24a21a/image/i257cbd18c37f1471/version/1457267486/image.jpg", "https://image.jimcdn.com/app/cms/image/transf/dimension=1920x400:format=jpg/path/s49073bcefd24a21a/image/if0b4a2d7cdce2121/version/1457267486/image.jpg", "https://image.jimcdn.com/app/cms/image/transf/dimension=400x1920:format=jpg:rotate=90/path/s49073bcefd24a21a/image/ib8f5fa0c1f1cce1f/version/1462693135/image.jpg", "https://image.jimcdn.com/app/cms/image/transf/dimension=1920x400:format=jpg/path/s49073bcefd24a21a/image/i3606adedec82a135/version/1462693135/image.jpg", "https://image.jimcdn.com/app/cms/image/transf/dimension=400x1920:format=jpg:rotate=90/path/s49073bcefd24a21a/image/id73fd09c8a161891/version/1462693135/image.jpg"]
     }
 ]
