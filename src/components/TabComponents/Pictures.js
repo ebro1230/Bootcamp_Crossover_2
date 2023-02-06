@@ -1,6 +1,7 @@
 import { useState } from "react";
 export default function Pictures({ restaurant }) {
-  const [pics, setPics] = useState([restaurant.pics]);
+  const [pics, setPics] = useState(restaurant.pics);
+  console.log(pics);
   return (
     <div className="img-tab-container">
       {pics.map((pic) => {
