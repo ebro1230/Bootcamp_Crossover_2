@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Carousel from "react-material-ui-carousel";
 export default function Pictures({ restaurant }) {
   const [pics, setPics] = useState(restaurant.pics);
   console.log(pics);
@@ -7,9 +8,11 @@ export default function Pictures({ restaurant }) {
   }, [restaurant]);
   return (
     <div className="img-tab-container">
-      {pics.map((pic) => {
-        return <img key={pic} src={pic} alt="Restaurant pics"></img>;
-      })}
+      <Carousel>
+        {pics.map((pic) => {
+          return <img key={pic} src={pic} alt="Restaurant pics"></img>;
+        })}
+      </Carousel>
     </div>
   );
 }
