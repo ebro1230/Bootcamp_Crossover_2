@@ -17,6 +17,8 @@
   height: 100vh;
   justify-content: space-around;
   background: #000;
+  /* Tryg */
+  min-width: 230px;
 }
 .sidebarNav .navlinks {
   list-style: none;
