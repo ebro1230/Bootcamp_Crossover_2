@@ -122,6 +122,7 @@ h1 {
   text-align: center;
 }
 .restaurant-menu img {
+  margin-top: 10px;
   width: 350px;
   height: 400px;
 }
