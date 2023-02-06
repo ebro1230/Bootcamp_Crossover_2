@@ -50,10 +50,9 @@ h1 {
 .restaurants {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
 }
 .restaurantCard {
-  flex: 40% !important;
+  flex: 30% !important;
   margin: 10px !important;
   padding: 10px !important;
   display: flex !important;
