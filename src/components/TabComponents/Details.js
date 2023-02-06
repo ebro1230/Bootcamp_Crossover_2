@@ -24,7 +24,7 @@ export default function Details({ restaurant }) {
         {""} to {restaurant.close}
       </p>
       <p>
-        <strong>Delivery:</strong> NO
+        <strong>Delivery:</strong> {restaurant.delivery ? <>YES</> : <>NO</>}
       </p>
     </div>
   );
