@@ -14,7 +14,8 @@
         "delivery":"false",
         "menu":"https://menury.com/r/3a038a9622/K%C3%83%C2%B6ln/CafeBuur/de",
         "price":2,
-        "tags":["Cafe", "International", "Turkish"]
+        "tags":["Cafe", "International", "Turkish"],
+        "pics":["https://cafebuur.de/wp-content/uploads/2020/11/15-05-20-cafe-buur-185.jpg", "https://cafebuur.de/wp-content/uploads/2020/11/04-06-2020-cafe-buur-hall-of-fame-0303-Copy.png", "https://cafebuur.de/wp-content/uploads/2020/11/cafe-buur-20-februar-2019-0058-.jpg", "https://cafebuur.de/wp-content/uploads/2021/01/breakfast1.jpg", "https://cafebuur.de/wp-content/uploads/2021/01/dessert1.jpg", "https://cafebuur.de/wp-content/uploads/2021/01/lunch7.jpg", "https://cafebuur.de/wp-content/uploads/2021/01/smoothies2.jpg", "https://cafebuur.de/wp-content/uploads/2021/01/lunch6.jpg", "https://cafebuur.de/wp-content/uploads/2021/01/dessert2.jpg", "https://cafebuur.de/wp-content/uploads/2021/01/breakfast1.jpg"]
     },
     {
         "name":"OX Royal",
@@ -31,7 +32,8 @@
         "delivery":"false",
         "menu":"https://steakhaus-ox-royal-koeln.de/wp-content/uploads/OX-Royal-Weinkarte.pdf",
         "price":3,
-        "tags":["Steakhouse", "Seafood", "Barbecue"]
+        "tags":["Steakhouse", "Seafood", "Barbecue"],
+        "pics":["https://steakhaus-ox-royal-koeln.de/wp-content/uploads/oxroyal.jpg", "https://steakhaus-ox-royal-koeln.de/wp-content/uploads/kalamares-koeln.jpg", "https://steakhaus-ox-royal-koeln.de/wp-content/uploads/koestlichkeiten-koeln.jpg", "https://steakhaus-ox-royal-koeln.de/wp-content/uploads/steak-lokal.jpg", "https://steakhaus-ox-royal-koeln.de/wp-content/uploads/steakhaus-essen.jpg", "https://steakhaus-ox-royal-koeln.de/wp-content/uploads/ox-royal.jpg", "https://steakhaus-ox-royal-koeln.de/wp-content/uploads/nachtisch-steakhaus.jpg", "https://steakhaus-ox-royal-koeln.de/wp-content/uploads/steak-restaurant-koeln.jpg", "https://steakhaus-ox-royal-koeln.de/wp-content/uploads/steakhaus.jpg", "https://steakhaus-ox-royal-koeln.de/wp-content/uploads/essen-ox-royal.jpg"]
     },
     {
         "name":"Japans Ramen Restaurant Takumi Cologne",
@@ -48,7 +50,8 @@
         "delivery":"false",
         "menu":"https://takumi.koeln/wp-content/uploads/2022/11/takumi1-speisekarte.pdf",
         "price":2,
-        "tags":["Japanese", "Asian", "Vegetarian"]
+        "tags":["Japanese", "Asian", "Vegetarian"],
+        "pics":["https://media-cdn.tripadvisor.com/media/photo-w/1c/39/30/97/kimchi.jpg","https://media-cdn.tripadvisor.com/media/photo-w/1c/39/30/40/beste-cups-nudeln-the.jpg", "https://media-cdn.tripadvisor.com/media/photo-m/1280/1b/53/32/1a/veggyoza.jpg", "https://media-cdn.tripadvisor.com/media/photo-m/1280/1b/53/32/16/dem-ramen-restaurant.jpg", "https://media-cdn.tripadvisor.com/media/photo-w/1c/36/5a/39/takumi.jpg", "https://media-cdn.tripadvisor.com/media/photo-w/1a/95/38/3f/mildly-interesting-gyoza.jpg", "https://media-cdn.tripadvisor.com/media/photo-w/1a/d1/16/f3/tee-ramen.jpg", "https://media-cdn.tripadvisor.com/media/photo-w/1a/95/38/4e/side-menu-pork-rice-bowl.jpg", "https://media-cdn.tripadvisor.com/media/photo-p/1c/39/30/1f/vegi-miso-ramen.jpg", "https://media-cdn.tripadvisor.com/media/photo-w/1c/39/30/9b/gyoza-und-karaage.jpg"]
     },
     {
         "name":"ST. LOUIS Breakfast",
