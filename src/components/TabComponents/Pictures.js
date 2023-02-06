@@ -8,7 +8,7 @@ export default function Pictures({ restaurant }) {
   }, [restaurant]);
   return (
     <div className="img-tab-container">
-      <Carousel>
+      <Carousel className="Carousel">
         {pics.map((pic) => {
           return <img key={pic} src={pic} alt="Restaurant pics"></img>;
         })}
