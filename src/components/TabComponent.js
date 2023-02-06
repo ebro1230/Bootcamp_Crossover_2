@@ -35,7 +35,7 @@ export default function LabTabs(props) {
     )
       .then((response) => {
         if (!response.ok) {
-          console.log(`HTTP Status Error: ${response.status}`);
+          alert(`HTTP Status Error: ${response.status}`);
         } else {
           return response;
         }
@@ -45,7 +45,7 @@ export default function LabTabs(props) {
         setPosition([json.data[0].latitude, json.data[0].longitude]);
       })
       .catch((errorMessage) => {
-        console.log(`${errorMessage}`);
+        alert(`${errorMessage}`);
       });
   }, [address]);
 
