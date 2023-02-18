@@ -20,7 +20,7 @@ function Home() {
   const [restaurantType, setRestaurantType] = useState("");
   const [typesofFood, setTypesofFood] = useState([]);
   let { restaurants, isLoading, error, types } = useFetch(url);
-  console.log(restaurants);
+
   const handleOnClick = (e) => {
     navigation(`/${e.target.id}`);
   };
@@ -90,10 +90,12 @@ function Home() {
                       height="300"
                       key={restaurant.name}
                       id={restaurant.name}
+                      onClick={handleOnClick}
                     >
                       <CardActionArea
                         id={restaurant.name}
                         onClick={handleOnClick}
+                        sx={{ height: 100 + "%" }}
                       >
                         <CardMedia
                           component="img"
@@ -101,13 +103,18 @@ function Home() {
                           image={restaurant.logo}
                           alt="Image of the Restaurant"
                           id={restaurant.name}
+                          onClick={handleOnClick}
                         />
-                        <CardContent id={restaurant.name}>
+                        <CardContent
+                          id={restaurant.name}
+                          onClick={handleOnClick}
+                        >
                           <Typography
                             id={restaurant.name}
                             gutterBottom
                             variant="h5"
                             component="div"
+                            onClick={handleOnClick}
                           >
                             {restaurant.name}
                           </Typography>
@@ -115,126 +122,177 @@ function Home() {
                             id={restaurant.name}
                             variant="body2"
                             color="text.secondary"
+                            onClick={handleOnClick}
                           >
                             {restaurant.tags.map((tag) => (
-                              <p>{tag} </p>
+                              <p id={restaurant.name}>{tag} </p>
                             ))}
                             <br />
                             {restaurant.price === 1 ? (
-                              <>
+                              <div onClick={handleOnClick}>
                                 <img
                                   src={moneySignGold}
                                   alt="Gold Money Sign"
+                                  onClick={handleOnClick}
+                                  id={restaurant.name}
                                 />
                                 <img
                                   src={moneySignBlack}
                                   alt="Black Money Sign"
+                                  onClick={handleOnClick}
+                                  id={restaurant.name}
                                 />
                                 <img
                                   src={moneySignBlack}
                                   alt="Black Money Sign"
+                                  onClick={handleOnClick}
+                                  id={restaurant.name}
                                 />
                                 <img
                                   src={moneySignBlack}
                                   alt="Black Money Sign"
+                                  onClick={handleOnClick}
+                                  id={restaurant.name}
                                 />
                                 <img
+                                  id={restaurant.name}
                                   src={moneySignBlack}
                                   alt="Black Money Sign"
+                                  onClick={handleOnClick}
                                 />
-                              </>
+                              </div>
                             ) : restaurant.price === 2 ? (
-                              <>
+                              <div onClick={handleOnClick}>
                                 <img
+                                  id={restaurant.name}
                                   src={moneySignGold}
                                   alt="Gold Money Sign"
+                                  onClick={handleOnClick}
                                 />
                                 <img
+                                  id={restaurant.name}
                                   src={moneySignGold}
                                   alt="Gold Money Sign"
+                                  onClick={handleOnClick}
                                 />
                                 <img
+                                  id={restaurant.name}
                                   src={moneySignBlack}
                                   alt="Black Money Sign"
+                                  onClick={handleOnClick}
                                 />
                                 <img
+                                  id={restaurant.name}
                                   src={moneySignBlack}
                                   alt="Black Money Sign"
+                                  onClick={handleOnClick}
                                 />
                                 <img
+                                  id={restaurant.name}
                                   src={moneySignBlack}
                                   alt="Black Money Sign"
+                                  onClick={handleOnClick}
                                 />
-                              </>
+                              </div>
                             ) : restaurant.price === 3 ? (
-                              <>
+                              <div onClick={handleOnClick}>
                                 <img
+                                  id={restaurant.name}
                                   src={moneySignGold}
                                   alt="Gold Money Sign"
+                                  onClick={handleOnClick}
                                 />
                                 <img
+                                  id={restaurant.name}
                                   src={moneySignGold}
                                   alt="Gold Money Sign"
+                                  onClick={handleOnClick}
                                 />
                                 <img
+                                  id={restaurant.name}
                                   src={moneySignGold}
                                   alt="Gold Money Sign"
+                                  onClick={handleOnClick}
                                 />
                                 <img
+                                  id={restaurant.name}
                                   src={moneySignBlack}
                                   alt="Black Money Sign"
+                                  onClick={handleOnClick}
                                 />
                                 <img
+                                  id={restaurant.name}
                                   src={moneySignBlack}
                                   alt="Black Money Sign"
+                                  onClick={handleOnClick}
                                 />
-                              </>
+                              </div>
                             ) : restaurant.price === 4 ? (
-                              <>
+                              <div onClick={handleOnClick}>
                                 <img
+                                  id={restaurant.name}
                                   src={moneySignGold}
                                   alt="Gold Money Sign"
+                                  onClick={handleOnClick}
                                 />
                                 <img
+                                  id={restaurant.name}
                                   src={moneySignGold}
                                   alt="Gold Money Sign"
+                                  onClick={handleOnClick}
                                 />
                                 <img
+                                  id={restaurant.name}
                                   src={moneySignGold}
                                   alt="Gold Money Sign"
+                                  onClick={handleOnClick}
                                 />
                                 <img
+                                  id={restaurant.name}
                                   src={moneySignGold}
                                   alt="Gold Money Sign"
+                                  onClick={handleOnClick}
                                 />
                                 <img
+                                  id={restaurant.name}
                                   src={moneySignBlack}
                                   alt="Black Money Sign"
+                                  onClick={handleOnClick}
                                 />
-                              </>
+                              </div>
                             ) : restaurant.price === 5 ? (
-                              <>
+                              <div onClick={handleOnClick}>
                                 <img
+                                  id={restaurant.name}
                                   src={moneySignGold}
                                   alt="Gold Money Sign"
+                                  onClick={handleOnClick}
                                 />
                                 <img
+                                  id={restaurant.name}
                                   src={moneySignGold}
                                   alt="Gold Money Sign"
+                                  onClick={handleOnClick}
                                 />
                                 <img
+                                  id={restaurant.name}
                                   src={moneySignGold}
                                   alt="Gold Money Sign"
+                                  onClick={handleOnClick}
                                 />
                                 <img
+                                  id={restaurant.name}
                                   src={moneySignGold}
                                   alt="Gold Money Sign"
+                                  onClick={handleOnClick}
                                 />
                                 <img
+                                  id={restaurant.name}
                                   src={moneySignGold}
                                   alt="Gold Money Sign"
+                                  onClick={handleOnClick}
                                 />
-                              </>
+                              </div>
                             ) : null}
                           </Typography>
                         </CardContent>
@@ -253,10 +311,12 @@ function Home() {
                     height="300"
                     key={restaurant.name}
                     id={restaurant.name}
+                    onClick={handleOnClick}
                   >
                     <CardActionArea
                       id={restaurant.name}
                       onClick={handleOnClick}
+                      sx={{ height: 100 + "%" }}
                     >
                       <CardMedia
                         component="img"
@@ -264,13 +324,15 @@ function Home() {
                         image={restaurant.logo}
                         alt="Image of the Restaurant"
                         id={restaurant.name}
+                        onClick={handleOnClick}
                       />
-                      <CardContent id={restaurant.name}>
+                      <CardContent id={restaurant.name} onClick={handleOnClick}>
                         <Typography
                           id={restaurant.name}
                           gutterBottom
                           variant="h5"
                           component="div"
+                          onClick={handleOnClick}
                         >
                           {restaurant.name}
                         </Typography>
@@ -278,81 +340,176 @@ function Home() {
                           id={restaurant.name}
                           variant="body2"
                           color="text.secondary"
+                          onClick={handleOnClick}
                         >
                           {restaurant.tags.map((tag) => (
-                            <p>{tag} </p>
+                            <p id={restaurant.name}>{tag} </p>
                           ))}
                           <br />
                           {restaurant.price === 1 ? (
-                            <>
-                              <img src={moneySignGold} alt="Gold Money Sign" />
+                            <div onClick={handleOnClick}>
                               <img
-                                src={moneySignBlack}
-                                alt="Black Money Sign"
+                                id={restaurant.name}
+                                src={moneySignGold}
+                                alt="Gold Money Sign"
                               />
                               <img
+                                id={restaurant.name}
                                 src={moneySignBlack}
                                 alt="Black Money Sign"
+                                onClick={handleOnClick}
                               />
                               <img
+                                id={restaurant.name}
                                 src={moneySignBlack}
                                 alt="Black Money Sign"
+                                onClick={handleOnClick}
                               />
                               <img
+                                id={restaurant.name}
                                 src={moneySignBlack}
                                 alt="Black Money Sign"
+                                onClick={handleOnClick}
                               />
-                            </>
+                              <img
+                                id={restaurant.name}
+                                src={moneySignBlack}
+                                alt="Black Money Sign"
+                                onClick={handleOnClick}
+                              />
+                            </div>
                           ) : restaurant.price === 2 ? (
-                            <>
-                              <img src={moneySignGold} alt="Gold Money Sign" />
-                              <img src={moneySignGold} alt="Gold Money Sign" />
+                            <div onClick={handleOnClick}>
                               <img
-                                src={moneySignBlack}
-                                alt="Black Money Sign"
+                                id={restaurant.name}
+                                src={moneySignGold}
+                                alt="Gold Money Sign"
+                                onClick={handleOnClick}
                               />
                               <img
-                                src={moneySignBlack}
-                                alt="Black Money Sign"
+                                id={restaurant.name}
+                                src={moneySignGold}
+                                alt="Gold Money Sign"
+                                onClick={handleOnClick}
                               />
                               <img
+                                id={restaurant.name}
                                 src={moneySignBlack}
                                 alt="Black Money Sign"
+                                onClick={handleOnClick}
                               />
-                            </>
+                              <img
+                                id={restaurant.name}
+                                src={moneySignBlack}
+                                alt="Black Money Sign"
+                                onClick={handleOnClick}
+                              />
+                              <img
+                                id={restaurant.name}
+                                src={moneySignBlack}
+                                alt="Black Money Sign"
+                                onClick={handleOnClick}
+                              />
+                            </div>
                           ) : restaurant.price === 3 ? (
-                            <>
-                              <img src={moneySignGold} alt="Gold Money Sign" />
-                              <img src={moneySignGold} alt="Gold Money Sign" />
-                              <img src={moneySignGold} alt="Gold Money Sign" />
+                            <div onClick={handleOnClick}>
                               <img
-                                src={moneySignBlack}
-                                alt="Black Money Sign"
+                                id={restaurant.name}
+                                src={moneySignGold}
+                                alt="Gold Money Sign"
+                                onClick={handleOnClick}
                               />
                               <img
+                                id={restaurant.name}
+                                src={moneySignGold}
+                                alt="Gold Money Sign"
+                                onClick={handleOnClick}
+                              />
+                              <img
+                                id={restaurant.name}
+                                src={moneySignGold}
+                                alt="Gold Money Sign"
+                                onClick={handleOnClick}
+                              />
+                              <img
+                                id={restaurant.name}
                                 src={moneySignBlack}
                                 alt="Black Money Sign"
+                                onClick={handleOnClick}
                               />
-                            </>
+                              <img
+                                id={restaurant.name}
+                                src={moneySignBlack}
+                                alt="Black Money Sign"
+                                onClick={handleOnClick}
+                              />
+                            </div>
                           ) : restaurant.price === 4 ? (
-                            <>
-                              <img src={moneySignGold} alt="Gold Money Sign" />
-                              <img src={moneySignGold} alt="Gold Money Sign" />
-                              <img src={moneySignGold} alt="Gold Money Sign" />
-                              <img src={moneySignGold} alt="Gold Money Sign" />
+                            <div onClick={handleOnClick}>
                               <img
+                                id={restaurant.name}
+                                src={moneySignGold}
+                                alt="Gold Money Sign"
+                                onClick={handleOnClick}
+                              />
+                              <img
+                                id={restaurant.name}
+                                src={moneySignGold}
+                                alt="Gold Money Sign"
+                                onClick={handleOnClick}
+                              />
+                              <img
+                                id={restaurant.name}
+                                src={moneySignGold}
+                                alt="Gold Money Sign"
+                                onClick={handleOnClick}
+                              />
+                              <img
+                                id={restaurant.name}
+                                src={moneySignGold}
+                                alt="Gold Money Sign"
+                                onClick={handleOnClick}
+                              />
+                              <img
+                                id={restaurant.name}
                                 src={moneySignBlack}
                                 alt="Black Money Sign"
+                                onClick={handleOnClick}
                               />
-                            </>
+                            </div>
                           ) : restaurant.price === 5 ? (
-                            <>
-                              <img src={moneySignGold} alt="Gold Money Sign" />
-                              <img src={moneySignGold} alt="Gold Money Sign" />
-                              <img src={moneySignGold} alt="Gold Money Sign" />
-                              <img src={moneySignGold} alt="Gold Money Sign" />
-                              <img src={moneySignGold} alt="Gold Money Sign" />
-                            </>
+                            <div onClick={handleOnClick}>
+                              <img
+                                id={restaurant.name}
+                                src={moneySignGold}
+                                alt="Gold Money Sign"
+                                onClick={handleOnClick}
+                              />
+                              <img
+                                id={restaurant.name}
+                                src={moneySignGold}
+                                alt="Gold Money Sign"
+                                onClick={handleOnClick}
+                              />
+                              <img
+                                id={restaurant.name}
+                                src={moneySignGold}
+                                alt="Gold Money Sign"
+                                onClick={handleOnClick}
+                              />
+                              <img
+                                id={restaurant.name}
+                                src={moneySignGold}
+                                alt="Gold Money Sign"
+                                onClick={handleOnClick}
+                              />
+                              <img
+                                id={restaurant.name}
+                                src={moneySignGold}
+                                alt="Gold Money Sign"
+                                onClick={handleOnClick}
+                              />
+                            </div>
                           ) : null}
                         </Typography>
                       </CardContent>

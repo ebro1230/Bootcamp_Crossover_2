@@ -52,13 +52,11 @@ h1 {
 .restaurants {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 .restaurantCard {
-  flex: 30% !important;
-  margin: 10px !important;
-  padding: 10px !important;
+  padding: 0.7rem !important;
   display: flex !important;
-  justify-content: center !important;
 }
 .filter {
   display: flex;
