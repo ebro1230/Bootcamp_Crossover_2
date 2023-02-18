@@ -15,6 +15,7 @@ export default function LabTabs(props) {
   const [value, setValue] = React.useState("Details");
   const [position, setPosition] = useState(null);
   const { width, height, findScreenSize } = useWindowResize();
+  const API = `${process.env.REACT_APP_API_KEY}`;
   const address = `${props.restaurant.street}+${props.restaurant.zip}+${props.restaurant.city}+${props.restaurant.state}+${props.restaurant.country}`;
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -31,7 +32,7 @@ export default function LabTabs(props) {
 
   useEffect(() => {
     fetch(
-      `http://api.positionstack.com/v1/forward?access_key=95957f430de63e83ac0e0ec7975be463&query=${address}`
+      `http://api.positionstack.com/v1/forward?access_key=${API}&query=${address}`
     )
       .then((response) => {
         if (!response.ok) {
