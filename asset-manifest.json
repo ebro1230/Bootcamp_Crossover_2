@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Bootcamp_Crossover_2/static/css/main.a864b96a.css",
-    "main.js": "/Bootcamp_Crossover_2/static/js/main.4c21e776.js",
+    "main.js": "/Bootcamp_Crossover_2/static/js/main.aefdc80e.js",
     "index.html": "/Bootcamp_Crossover_2/index.html",
     "main.a864b96a.css.map": "/Bootcamp_Crossover_2/static/css/main.a864b96a.css.map",
-    "main.4c21e776.js.map": "/Bootcamp_Crossover_2/static/js/main.4c21e776.js.map"
+    "main.aefdc80e.js.map": "/Bootcamp_Crossover_2/static/js/main.aefdc80e.js.map"
   },
   "entrypoints": [
     "static/css/main.a864b96a.css",
-    "static/js/main.4c21e776.js"
+    "static/js/main.aefdc80e.js"
   ]
 }
