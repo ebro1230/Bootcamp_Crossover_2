@@ -4,13 +4,13 @@ import { NavLink, Outlet } from "react-router-dom";
 function Sidebar({ restaurants }) {
   return (
     <aside className="sidebarNav">
-      <NavLink
+      <a
         className="navlinks homepage"
-        to="/"
+        href="https://ebro1230.github.io/Bootcamp_Crossover_2"
         style={({ isActive }) => ({ color: isActive ? "#00bcd4" : null })}
       >
         Homepage
-      </NavLink>
+      </a>
       <hr />
       {restaurants.map((restaurant) => {
         return (
