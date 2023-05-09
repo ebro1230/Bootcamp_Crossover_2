@@ -7,7 +7,6 @@ function Sidebar({ restaurants }) {
       <a
         className="navlinks homepage"
         href="https://ebro1230.github.io/Bootcamp_Crossover_2"
-        style={({ isActive }) => ({ color: isActive ? "#00bcd4" : null })}
       >
         Homepage
       </a>
