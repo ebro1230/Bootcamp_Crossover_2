@@ -32,7 +32,7 @@ export default function LabTabs(props) {
 
   useEffect(() => {
     fetch(
-      `http://api.positionstack.com/v1/forward?access_key=${API}&query=${address}`
+      `https://api.positionstack.com/v1/forward?access_key=${API}&query=${address}`
     )
       .then((response) => {
         if (!response.ok) {
