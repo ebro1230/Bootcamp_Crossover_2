@@ -5,7 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <BrowserRouter>
+  <BrowserRouter basename="/Bootcamp_Crossover_2">
     <React.StrictMode>
       <App />
     </React.StrictMode>
