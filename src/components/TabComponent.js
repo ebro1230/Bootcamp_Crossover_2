@@ -16,7 +16,7 @@ export default function LabTabs(props) {
   const [position, setPosition] = useState(null);
   const { width, height, findScreenSize } = useWindowResize();
   const API = `${process.env.REACT_APP_API_KEY}`;
-  const address = `${props.restaurant.street}+${props.restaurant.zip}+${props.restaurant.city}+${props.restaurant.state}+${props.restaurant.country}`;
+  const address = `${props.restaurant.street}+%20${props.restaurant.zip}+%20${props.restaurant.city}+%20${props.restaurant.state}+%20${props.restaurant.country}`;
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -32,7 +32,7 @@ export default function LabTabs(props) {
 
   useEffect(() => {
     fetch(
-      `https://api.positionstack.com/v1/forward?access_key=${API}&query=${address}`
+      `https://api.geoapify.com/v1/geocode/search?text=${address}&apiKey=${API}`
     )
       .then((response) => {
         if (!response.ok) {
@@ -43,7 +43,11 @@ export default function LabTabs(props) {
       })
       .then((response) => response.json())
       .then((json) => {
-        setPosition([json.data[0].latitude, json.data[0].longitude]);
+        console.log(json);
+        setPosition([
+          json.features[0].properties.lat,
+          json.features[0].properties.lon,
+        ]);
       })
       .catch((errorMessage) => {
         alert(`${errorMessage}`);
