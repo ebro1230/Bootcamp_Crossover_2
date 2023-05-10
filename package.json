@@ -1,6 +1,5 @@
 {
-  "homepage": "https://ebro1230.github.io/Bootcamp_Crossover_2",
-  "name": "my-app",
+  "name": "BestRestaurantsCologne",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
