@@ -6,7 +6,7 @@ function Sidebar({ restaurants }) {
     <aside className="sidebarNav">
       <NavLink
         className="navlinks homepage"
-        to="https://ebro1230.github.io/Bootcamp_Crossover_2"
+        to="/"
         style={({ isActive }) => ({ color: isActive ? "#00bcd4" : null })}
       >
         Homepage

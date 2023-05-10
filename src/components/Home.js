@@ -16,7 +16,7 @@ import moneySignBlack from "./Dollar_Sign_(Black).jpg";
 
 function Home() {
   const navigation = useNavigate();
-  const url = "./Bootcamp_Crossover_2.json";
+  const url = `${process.env.REACT_APP_BACKEND_URL}`;
   const [restaurantType, setRestaurantType] = useState("");
   const [typesofFood, setTypesofFood] = useState([]);
   let { restaurants, isLoading, error, types } = useFetch(url);

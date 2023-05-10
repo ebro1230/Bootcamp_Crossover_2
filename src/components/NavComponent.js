@@ -5,7 +5,7 @@ import useFetch from "./useFetch";
 import TabComponent from "./TabComponent";
 
 export default function NavComponent() {
-  const url = "./Bootcamp_Crossover_2.json";
+  const url = `${process.env.REACT_APP_BACKEND_URL}`;
   const { restaurants, isLoading, error, types } = useFetch(url);
   const { restaurantName } = useParams();
   const [restaurant, setRestaurant] = useState(null);
