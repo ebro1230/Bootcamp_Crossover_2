@@ -55,35 +55,49 @@ export default function LabTabs(props) {
   }, [address]);
 
   return (
-    <Box sx={{ width: "100%", typography: "body1" }}>
-      <TabContext value={value}>
-        <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-          <TabList onChange={handleChange} aria-label="lab API tabs example">
-            <Tab label="Details" value="Details" />
-            <Tab label="Location" value="Location" />
-            <Tab label="Menu" value="Menu" />
-            <Tab label="Pictures" value="Pictures" />
-          </TabList>
-        </Box>
-        <TabPanel value="Details">
-          <Details restaurant={props.restaurant} />
-        </TabPanel>
-        <TabPanel value="Location">
-          {position ? (
-            <Location
-              restaurant={props.restaurant}
-              position={position}
-              height={height - 50}
-            />
-          ) : null}
-        </TabPanel>
-        <TabPanel value="Menu">
-          <Menu restaurant={props.restaurant} />
-        </TabPanel>
-        <TabPanel value="Pictures">
-          <Pictures restaurant={props.restaurant} />
-        </TabPanel>
-      </TabContext>
-    </Box>
+    <>
+      {" "}
+      <div className="container">
+        <img
+          src="https://www.expatica.com/app/uploads/sites/6/2014/05/cologne.jpg"
+          alt="Picture of Cologne"
+          width="100%"
+          height="200"
+        />
+        <div className="centered">
+          <h1>Best Restaurants in Cologne</h1>
+        </div>
+      </div>
+      <Box sx={{ width: "100%", typography: "body1" }}>
+        <TabContext value={value}>
+          <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+            <TabList onChange={handleChange} aria-label="lab API tabs example">
+              <Tab label="Details" value="Details" />
+              <Tab label="Location" value="Location" />
+              <Tab label="Menu" value="Menu" />
+              <Tab label="Pictures" value="Pictures" />
+            </TabList>
+          </Box>
+          <TabPanel value="Details">
+            <Details restaurant={props.restaurant} />
+          </TabPanel>
+          <TabPanel value="Location">
+            {position ? (
+              <Location
+                restaurant={props.restaurant}
+                position={position}
+                height={height - 50}
+              />
+            ) : null}
+          </TabPanel>
+          <TabPanel value="Menu">
+            <Menu restaurant={props.restaurant} />
+          </TabPanel>
+          <TabPanel value="Pictures">
+            <Pictures restaurant={props.restaurant} />
+          </TabPanel>
+        </TabContext>
+      </Box>
+    </>
   );
 }
