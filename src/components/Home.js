@@ -20,7 +20,7 @@ function Home() {
   const [restaurantType, setRestaurantType] = useState("");
   const [typesofFood, setTypesofFood] = useState([]);
   let { restaurants, isLoading, error, types } = useFetch(url);
-
+  console.log(restaurants);
   const handleOnClick = (e) => {
     navigation(`/${e.target.id}`);
   };
@@ -128,7 +128,7 @@ function Home() {
                               <p id={restaurant.name}>{tag} </p>
                             ))}
                             <br />
-                            {restaurant.price === 1 ? (
+                            {restaurant.price === "1" ? (
                               <div onClick={handleOnClick}>
                                 <img
                                   src={moneySignGold}
@@ -161,7 +161,7 @@ function Home() {
                                   onClick={handleOnClick}
                                 />
                               </div>
-                            ) : restaurant.price === 2 ? (
+                            ) : restaurant.price === "2" ? (
                               <div onClick={handleOnClick}>
                                 <img
                                   id={restaurant.name}
@@ -194,7 +194,7 @@ function Home() {
                                   onClick={handleOnClick}
                                 />
                               </div>
-                            ) : restaurant.price === 3 ? (
+                            ) : restaurant.price === "3" ? (
                               <div onClick={handleOnClick}>
                                 <img
                                   id={restaurant.name}
@@ -227,7 +227,7 @@ function Home() {
                                   onClick={handleOnClick}
                                 />
                               </div>
-                            ) : restaurant.price === 4 ? (
+                            ) : restaurant.price === "4" ? (
                               <div onClick={handleOnClick}>
                                 <img
                                   id={restaurant.name}
@@ -260,7 +260,7 @@ function Home() {
                                   onClick={handleOnClick}
                                 />
                               </div>
-                            ) : restaurant.price === 5 ? (
+                            ) : restaurant.price === "5" ? (
                               <div onClick={handleOnClick}>
                                 <img
                                   id={restaurant.name}
@@ -346,7 +346,7 @@ function Home() {
                             <p id={restaurant.name}>{tag} </p>
                           ))}
                           <br />
-                          {restaurant.price === 1 ? (
+                          {restaurant.price === "1" ? (
                             <div onClick={handleOnClick}>
                               <img
                                 id={restaurant.name}
@@ -378,7 +378,7 @@ function Home() {
                                 onClick={handleOnClick}
                               />
                             </div>
-                          ) : restaurant.price === 2 ? (
+                          ) : restaurant.price === "2" ? (
                             <div onClick={handleOnClick}>
                               <img
                                 id={restaurant.name}
@@ -411,7 +411,7 @@ function Home() {
                                 onClick={handleOnClick}
                               />
                             </div>
-                          ) : restaurant.price === 3 ? (
+                          ) : restaurant.price === "3" ? (
                             <div onClick={handleOnClick}>
                               <img
                                 id={restaurant.name}
@@ -444,7 +444,7 @@ function Home() {
                                 onClick={handleOnClick}
                               />
                             </div>
-                          ) : restaurant.price === 4 ? (
+                          ) : restaurant.price === "4" ? (
                             <div onClick={handleOnClick}>
                               <img
                                 id={restaurant.name}
@@ -477,7 +477,7 @@ function Home() {
                                 onClick={handleOnClick}
                               />
                             </div>
-                          ) : restaurant.price === 5 ? (
+                          ) : restaurant.price === "5" ? (
                             <div onClick={handleOnClick}>
                               <img
                                 id={restaurant.name}
