@@ -18,11 +18,23 @@ export default function NavComponent() {
   }, [restaurants, restaurantName]);
 
   return (
-    <div className="navContainer">
-      <Sidebar restaurants={restaurants} />
-      {restaurant ? (
-        <TabComponent restaurant={restaurant} restaurants={restaurants} />
-      ) : null}
-    </div>
+    <>
+      <div className="container">
+        <img
+          src="https://www.panorama-photo.net/photo/765.jpg"
+          alt="Picture of Cologne"
+          className="banner-img"
+        />
+        <div className="centered">
+          <h1>Best Restaurants in Cologne</h1>
+        </div>
+      </div>
+      <div className="navContainer">
+        <Sidebar restaurants={restaurants} />
+        {restaurant ? (
+          <TabComponent restaurant={restaurant} restaurants={restaurants} />
+        ) : null}
+      </div>
+    </>
   );
 }

@@ -45,10 +45,9 @@ function Home() {
     <>
       <div className="container">
         <img
-          src="https://www.expatica.com/app/uploads/sites/6/2014/05/cologne.jpg"
+          src="https://www.panorama-photo.net/photo/765.jpg"
           alt="Picture of Cologne"
-          width="100%"
-          height="200"
+          className="banner-img"
         />
         <div className="centered">
           <h1>Best Restaurants in Cologne</h1>
