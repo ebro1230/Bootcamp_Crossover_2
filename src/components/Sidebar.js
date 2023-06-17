@@ -46,7 +46,6 @@ function Sidebar({ restaurants }) {
             Homepage
           </NavLink>
 
-          <hr />
           {restaurants.map((restaurant) => {
             return (
               <NavLink

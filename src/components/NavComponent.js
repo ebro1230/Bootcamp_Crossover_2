@@ -19,7 +19,7 @@ export default function NavComponent() {
 
   return (
     <>
-      <div className="container">
+      <div className="banner-div">
         <img
           src="https://www.panorama-photo.net/photo/765.jpg"
           alt="Picture of Cologne"
