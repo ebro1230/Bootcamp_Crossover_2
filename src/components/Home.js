@@ -13,6 +13,8 @@ import Select from "@mui/material/Select";
 import useFetch from "./useFetch";
 import moneySignGold from "./Dollar_Sign_(Gold).jpg";
 import moneySignBlack from "./Dollar_Sign_(Black).jpg";
+import { Modal } from "react-bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function Home() {
   const navigation = useNavigate();
@@ -77,7 +79,19 @@ function Home() {
       </div>
       <div className="restaurants">
         {isLoading ? (
-          <LoadingIndicator />
+          <>
+            <LoadingIndicator />
+            <Modal show={true} centered>
+              <Modal.Header>
+                <Modal.Title>
+                  I am using the free backend hosting on Render.com. It takes
+                  ~1-2 minutes for the free server to spin back up if it has
+                  been inactive for more than 15 minutes. Thanks for your
+                  patience!
+                </Modal.Title>
+              </Modal.Header>
+            </Modal>
+          </>
         ) : restaurants.length ? (
           restaurantType ? (
             restaurants.map((restaurant) => {
